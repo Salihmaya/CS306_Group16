@@ -1,2 +1,9 @@
 # CS306_Group16
-Data Science Group Project
+Sabanci University Data Science Group Project
+
+Group Members:
+Berke Ceylan
+Nisa Erdal
+Salih Kaya
+Yunus Topçu 
+İsmail Çakmak
