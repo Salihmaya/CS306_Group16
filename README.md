@@ -1,5 +1,5 @@
 # CS306_Group16
-Sabanci University Data Science Group Project
+Sabanci University Database Systems Group Project
 
 Group Members:
 Berke Ceylan
