@@ -1,0 +1,52 @@
+[1, 23:39:33] Apply changes to cs306_step2_yunus: Applying object changes ...
+[1, 23:39:35] Applying changes to cs306_step2_yunus...: 
+[1, 23:39:35] : Changes applied to cs306_step2_yunus
+[1, 23:39:36] Apply changes to cs306_step2_yunus: Changes applied
+[2, 23:39:43] Create Table countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): Running...
+[2, 23:39:43] Create Table countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): 0 row(s) affected
+[3, 23:39:43] Create Table public_health_expenditure(
+	iso_code varchar(5) NOT NULL,
+	year INT,
+    expenditure_pc_gdp double,
+    primary key (iso_code, year),
+    foreign key (iso_code) references countries(iso_code) ON DELETE CASCADE
+): Running...
+[3, 23:39:43] Create Table public_health_expenditure(
+	iso_code varchar(5) NOT NULL,
+	year INT,
+    expenditure_pc_gdp double,
+    primary key (iso_code, year),
+    foreign key (iso_code) references countries(iso_code) ON DELETE CASCADE
+): 0 row(s) affected
+[4, 23:39:59] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[4, 23:39:59] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[5, 23:39:59] SHOW DATABASES: Executing 
+[5, 23:39:59] SHOW DATABASES: OK
+[6, 23:40:02] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[6, 23:40:02] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[7, 23:40:02] SHOW COLUMNS FROM `cs306_step2_yunus`.`countries`: Executing 
+[7, 23:40:02] SHOW COLUMNS FROM `cs306_step2_yunus`.`countries`: OK
+[8, 23:40:06] PREPARE stmt FROM 'INSERT INTO `cs306_step2_yunus`.`countries` (`country_name`,`iso_code`) VALUES(?,?)': Executing 
+[8, 23:40:06] PREPARE stmt FROM 'INSERT INTO `cs306_step2_yunus`.`countries` (`country_name`,`iso_code`) VALUES(?,?)': OK
+[9, 23:40:06] DEALLOCATE PREPARE stmt: Executing 
+[9, 23:40:06] DEALLOCATE PREPARE stmt: OK
+[10, 23:40:17] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[10, 23:40:17] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[11, 23:40:17] SHOW DATABASES: Executing 
+[11, 23:40:17] SHOW DATABASES: OK
+[12, 23:40:20] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[12, 23:40:20] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[13, 23:40:20] SHOW COLUMNS FROM `cs306_step2_yunus`.`public_health_expenditure`: Executing 
+[13, 23:40:20] SHOW COLUMNS FROM `cs306_step2_yunus`.`public_health_expenditure`: OK
+[14, 23:40:24] PREPARE stmt FROM 'INSERT INTO `cs306_step2_yunus`.`public_health_expenditure` (`iso_code`,`year`,`expenditure_pc_gdp`) VALUES(?,?,?)': Executing 
+[14, 23:40:24] PREPARE stmt FROM 'INSERT INTO `cs306_step2_yunus`.`public_health_expenditure` (`iso_code`,`year`,`expenditure_pc_gdp`) VALUES(?,?,?)': OK
+[15, 23:40:27] DEALLOCATE PREPARE stmt: Executing 
+[15, 23:40:27] DEALLOCATE PREPARE stmt: OK
