@@ -1,0 +1,50 @@
+[7, 18:32:01] Create Table countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): Running...
+[7, 18:32:02] Create Table countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): 0 row(s) affected
+[8, 18:32:28] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[8, 18:32:28] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[9, 18:32:28] SHOW DATABASES: Executing 
+[9, 18:32:28] SHOW DATABASES: OK
+[10, 18:32:30] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[10, 18:32:30] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[11, 18:32:30] SHOW COLUMNS FROM `cs306`.`countries`: Executing 
+[11, 18:32:30] SHOW COLUMNS FROM `cs306`.`countries`: OK
+[12, 18:32:35] PREPARE stmt FROM 'INSERT INTO `cs306`.`countries` (`country_name`,`iso_code`) VALUES(?,?)': Executing 
+[12, 18:32:35] PREPARE stmt FROM 'INSERT INTO `cs306`.`countries` (`country_name`,`iso_code`) VALUES(?,?)': OK
+[13, 18:32:36] DEALLOCATE PREPARE stmt: Executing 
+[13, 18:32:36] DEALLOCATE PREPARE stmt: OK
+[14, 18:36:56] Create Table lung_cancer_deaths(
+	year INT,
+    iso_code varchar(5) NOT NULL,
+    male_death_rate DECIMAL,
+	female_death_rate DECIMAL,
+    PRIMARY KEY (iso_code,year),
+    Foreign Key (iso_code) References countries(iso_code) ON DELETE CASCADE
+): Running...
+[14, 18:36:56] Create Table lung_cancer_deaths(
+	year INT,
+    iso_code varchar(5) NOT NULL,
+    male_death_rate DECIMAL,
+	female_death_rate DECIMAL,
+    PRIMARY KEY (iso_code,year),
+    Foreign Key (iso_code) References countries(iso_code) ON DELETE CASCADE
+): 0 row(s) affected
+[15, 18:37:17] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[15, 18:37:17] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[16, 18:37:17] SHOW DATABASES: Executing 
+[16, 18:37:17] SHOW DATABASES: OK
+[17, 18:37:18] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[17, 18:37:18] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[18, 18:37:18] SHOW COLUMNS FROM `cs306`.`lung_cancer_deaths`: Executing 
+[18, 18:37:18] SHOW COLUMNS FROM `cs306`.`lung_cancer_deaths`: OK
+[19, 18:37:23] PREPARE stmt FROM 'INSERT INTO `cs306`.`lung_cancer_deaths` (`iso_code`,`year`,`male_death_rate`,`female_death_rate`) VALUES(?,?,?,?)': Executing 
+[19, 18:37:23] PREPARE stmt FROM 'INSERT INTO `cs306`.`lung_cancer_deaths` (`iso_code`,`year`,`male_death_rate`,`female_death_rate`) VALUES(?,?,?,?)': OK
+[20, 18:37:52] DEALLOCATE PREPARE stmt: Executing 
+[20, 18:37:52] DEALLOCATE PREPARE stmt: OK
