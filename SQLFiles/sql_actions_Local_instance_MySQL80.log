@@ -1,0 +1,168 @@
+[1, 21:23:53] Apply changes to death-rate-smoking: Applying object changes ...
+[1, 21:23:58] Applying changes to death-rate-smoking...: 
+[1, 21:23:58] : Changes applied to death-rate-smoking
+[1, 21:23:59] Apply changes to death-rate-smoking: Changes applied
+[2, 21:27:12] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[2, 21:27:12] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[3, 21:27:12] SHOW DATABASES: Executing 
+[3, 21:27:12] SHOW DATABASES: OK
+[4, 21:27:24] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[4, 21:27:24] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[5, 21:28:41] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[5, 21:28:41] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[6, 21:30:00] Apply changes to iso_code: Applying object changes ...
+[6, 21:30:03] Applying changes to iso_code...: 
+[6, 21:30:11] Apply changes to iso_code: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2
+SQL Statement:
+CREATE TABLE `death-rate-smoking`.`iso_code` (
+)
+
+
+[7, 21:30:28] Apply changes to iso_code: Applying object changes ...
+[7, 21:30:31] Applying changes to iso_code...: 
+[7, 21:30:32] Apply changes to iso_code: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2
+SQL Statement:
+CREATE TABLE `death-rate-smoking`.`iso_code` (
+)
+
+
+[8, 21:30:43] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[8, 21:30:43] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[9, 21:30:43] SHOW DATABASES: Executing 
+[9, 21:30:43] SHOW DATABASES: OK
+[10, 21:30:50] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[10, 21:30:50] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[11, 21:31:16]  CREATE TABLE `death-rate-smoking`.`death-rate-smoking` (`iso_code` text, `year` int, `death_rate` double): Executing 
+[11, 21:31:16]  CREATE TABLE `death-rate-smoking`.`death-rate-smoking` (`iso_code` text, `year` int, `death_rate` double): OK
+[12, 21:31:16] PREPARE stmt FROM 'INSERT INTO `death-rate-smoking`.`death-rate-smoking` (`iso_code`,`year`,`death_rate`) VALUES(?,?,?)': Executing 
+[12, 21:31:16] PREPARE stmt FROM 'INSERT INTO `death-rate-smoking`.`death-rate-smoking` (`iso_code`,`year`,`death_rate`) VALUES(?,?,?)': OK
+[13, 21:31:37] DEALLOCATE PREPARE stmt: Executing 
+[13, 21:31:37] DEALLOCATE PREPARE stmt: OK
+[14, 21:38:12] Select * from death-rate-smoking: Running...
+[14, 21:38:12] Select * from death-rate-smoking: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-rate-smoking' at line 1
+[15, 21:38:16] Select * from death-rate-smoking: Running...
+[15, 21:38:16] Select * from death-rate-smoking: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-rate-smoking' at line 1
+[16, 21:38:46] Select * from columns
+LIMIT 0, 1000
+: Running...
+[16, 21:38:46] Select * from columns
+LIMIT 0, 1000
+: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[17, 21:38:59] SELECT * FROM `death-rate-smoking`.`death-rate-smoking`
+LIMIT 0, 1000
+: Running...
+[17, 21:38:59] SELECT * FROM `death-rate-smoking`.`death-rate-smoking`
+LIMIT 0, 1000
+: Fetching...
+[17, 21:39:00] SELECT * FROM `death-rate-smoking`.`death-rate-smoking`
+LIMIT 0, 1000
+: 1000 row(s) returned
+[18, 21:52:02] DROP DATABASE `death-rate-smoking`: Running...
+[18, 21:52:02] DROP DATABASE `death-rate-smoking`: 1 row(s) affected
+[19, 21:56:36] CREATE DATABASE CS306-Project: Running...
+[19, 21:56:36] CREATE DATABASE CS306-Project: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-Project' at line 1
+[20, 21:57:18] CREATE DATABASE CS306_Project: Running...
+[20, 21:57:18] CREATE DATABASE CS306_Project: 1 row(s) affected
+[21, 21:57:18] USE CS306_Project: Running...
+[21, 21:57:18] USE CS306_Project: 0 row(s) affected
+[22, 21:57:18] CREATE TABLE death_rate_smoking(iso_code VarChar(50),
+								year int,
+								death_rate double): Running...
+[22, 21:57:18] CREATE TABLE death_rate_smoking(iso_code VarChar(50),
+								year int,
+								death_rate double): 0 row(s) affected
+[23, 21:57:18] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[23, 21:57:18] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[23, 21:57:18] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: 0 row(s) returned
+[24, 21:57:38] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[24, 21:57:38] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[25, 21:57:38] SHOW DATABASES: Executing 
+[25, 21:57:38] SHOW DATABASES: OK
+[26, 21:57:45] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[26, 21:57:45] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[27, 21:57:45] SHOW COLUMNS FROM `cs306_project`.`death_rate_smoking`: Executing 
+[27, 21:57:45] SHOW COLUMNS FROM `cs306_project`.`death_rate_smoking`: OK
+[28, 21:57:51] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`death_rate_smoking` (`iso_code`,`year`,`death_rate`) VALUES(?,?,?)': Executing 
+[28, 21:57:51] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`death_rate_smoking` (`iso_code`,`year`,`death_rate`) VALUES(?,?,?)': OK
+[29, 21:58:11] DEALLOCATE PREPARE stmt: Executing 
+[29, 21:58:11] DEALLOCATE PREPARE stmt: OK
+[30, 21:58:45] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[30, 21:58:45] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[30, 21:58:45] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: 1000 row(s) returned
+[1, 21:28:46] CREATE DATABASE CS306_Project: Running...
+[1, 21:28:46] CREATE DATABASE CS306_Project: Error Code: 1007. Can't create database 'cs306_project'; database exists
+[2, 21:28:59] USE CS306_Project: Running...
+[2, 21:28:59] USE CS306_Project: 0 row(s) affected
+[3, 21:28:59] CREATE TABLE countries(iso_code VarChar(5) NOT NULL,
+						country_name VarChar(50),
+                        primary key (is_code)
+                        ): Running...
+[3, 21:28:59] CREATE TABLE countries(iso_code VarChar(5) NOT NULL,
+						country_name VarChar(50),
+                        primary key (is_code)
+                        ): Error Code: 1072. Key column 'is_code' doesn't exist in table
+[4, 21:29:14] USE CS306_Project: Running...
+[4, 21:29:14] USE CS306_Project: 0 row(s) affected
+[5, 21:29:14] CREATE TABLE countries(iso_code VarChar(5) NOT NULL,
+						country_name VarChar(50),
+                        primary key (iso_code)
+                        ): Running...
+[5, 21:29:14] CREATE TABLE countries(iso_code VarChar(5) NOT NULL,
+						country_name VarChar(50),
+                        primary key (iso_code)
+                        ): 0 row(s) affected
+[6, 21:29:14] CREATE TABLE death_rate_smoking(iso_code VarChar(50),
+								year int,
+								death_rate double,
+                                foreign key(iso_code) references countries(iso_code) ON DELETE CASCADE,
+                                primary key(year)
+                                ): Running...
+[6, 21:29:14] CREATE TABLE death_rate_smoking(iso_code VarChar(50),
+								year int,
+								death_rate double,
+                                foreign key(iso_code) references countries(iso_code) ON DELETE CASCADE,
+                                primary key(year)
+                                ): Error Code: 1050. Table 'death_rate_smoking' already exists
+[7, 21:30:30] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[7, 21:30:30] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[8, 21:30:30] SHOW DATABASES: Executing 
+[8, 21:30:30] SHOW DATABASES: OK
+[9, 21:30:31] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[9, 21:30:31] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[10, 21:30:31] SHOW COLUMNS FROM `cs306_project`.`countries`: Executing 
+[10, 21:30:31] SHOW COLUMNS FROM `cs306_project`.`countries`: OK
+[11, 21:30:39] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`countries` (`country_name`,`iso_code`) VALUES(?,?)': Executing 
+[11, 21:30:39] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`countries` (`country_name`,`iso_code`) VALUES(?,?)': OK
+[12, 21:30:40] DEALLOCATE PREPARE stmt: Executing 
+[12, 21:30:40] DEALLOCATE PREPARE stmt: OK
+[13, 21:31:16] SELECT * FROM countries
+LIMIT 0, 1000
+: Running...
+[13, 21:31:16] SELECT * FROM countries
+LIMIT 0, 1000
+: Fetching...
+[13, 21:31:16] SELECT * FROM countries
+LIMIT 0, 1000
+: 112 row(s) returned
+[14, 21:31:20] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[14, 21:31:20] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[14, 21:31:20] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: 1000 row(s) returned
