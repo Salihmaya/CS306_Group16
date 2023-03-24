@@ -1,0 +1,96 @@
+[2, 16:45:03] Apply changes to cs306: Applying object changes ...
+[2, 16:45:05] Applying changes to cs306...: 
+[2, 16:45:05] : Changes applied to cs306
+[2, 16:45:06] Apply changes to cs306: Changes applied
+[3, 16:45:20] create Table countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): Running...
+[3, 16:45:20] create Table countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[4, 16:45:28] create Table countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): Running...
+[4, 16:45:28] create Table countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): 0 row(s) affected
+[5, 16:45:28] create Table smoking_quit_help(
+
+	iso_code varchar(5) NOT NULL,
+    year INT,
+    indicator double,
+    primary key(iso_code, year),
+    foreign key (iso_code) references countries(iso_code) ON DELETE CASCADE
+    ): Running...
+[5, 16:45:28] create Table smoking_quit_help(
+
+	iso_code varchar(5) NOT NULL,
+    year INT,
+    indicator double,
+    primary key(iso_code, year),
+    foreign key (iso_code) references countries(iso_code) ON DELETE CASCADE
+    ): 0 row(s) affected
+[6, 16:46:13] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[6, 16:46:13] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[7, 16:46:13] SHOW DATABASES: Executing 
+[7, 16:46:13] SHOW DATABASES: OK
+[8, 16:46:38] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[8, 16:46:38] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[9, 16:46:38] SHOW COLUMNS FROM `cs306`.`countries`: Executing 
+[9, 16:46:38] SHOW COLUMNS FROM `cs306`.`countries`: OK
+[10, 16:47:07] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[10, 16:47:07] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[11, 16:47:07] SHOW DATABASES: Executing 
+[11, 16:47:07] SHOW DATABASES: OK
+[12, 16:47:13] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[12, 16:47:13] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[13, 16:47:21]  CREATE TABLE `cs306`.`smoking_quit_help` (`iso_code` text, `year` int, `help_indicator` int): Executing 
+[13, 16:47:21]  CREATE TABLE `cs306`.`smoking_quit_help` (`iso_code` text, `year` int, `help_indicator` int): Error Code: 1050
+Table 'smoking_quit_help' already exists
+[14, 16:47:21]  DROP TABLE `cs306`.`smoking_quit_help`: Executing 
+[14, 16:47:21]  DROP TABLE `cs306`.`smoking_quit_help`: OK
+[15, 16:47:21]  CREATE TABLE `cs306`.`smoking_quit_help` (`iso_code` text, `year` int, `help_indicator` int): Executing 
+[15, 16:47:21]  CREATE TABLE `cs306`.`smoking_quit_help` (`iso_code` text, `year` int, `help_indicator` int): OK
+[16, 16:47:21] TRUNCATE TABLE `cs306`.`smoking_quit_help`: Executing 
+[16, 16:47:21] TRUNCATE TABLE `cs306`.`smoking_quit_help`: OK
+[17, 16:47:21] PREPARE stmt FROM 'INSERT INTO `cs306`.`smoking_quit_help` (`iso_code`,`help_indicator`,`year`) VALUES(?,?,?)': Executing 
+[17, 16:47:21] PREPARE stmt FROM 'INSERT INTO `cs306`.`smoking_quit_help` (`iso_code`,`help_indicator`,`year`) VALUES(?,?,?)': OK
+[18, 16:47:48] DEALLOCATE PREPARE stmt: Executing 
+[18, 16:47:48] DEALLOCATE PREPARE stmt: OK
+[19, 16:51:49] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[19, 16:51:49] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[20, 16:51:49] SHOW DATABASES: Executing 
+[20, 16:51:49] SHOW DATABASES: OK
+[21, 16:52:04] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[21, 16:52:04] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[22, 16:52:11]  CREATE TABLE `cs306`.`countries` (`name` text, `iso_code` text): Executing 
+[22, 16:52:11]  CREATE TABLE `cs306`.`countries` (`name` text, `iso_code` text): Error Code: 1050
+Table 'countries' already exists
+[23, 16:52:11]  DROP TABLE `cs306`.`countries`: Executing 
+[23, 16:52:12]  DROP TABLE `cs306`.`countries`: OK
+[24, 16:52:12]  CREATE TABLE `cs306`.`countries` (`name` text, `iso_code` text): Executing 
+[24, 16:52:12]  CREATE TABLE `cs306`.`countries` (`name` text, `iso_code` text): OK
+[25, 16:52:12] TRUNCATE TABLE `cs306`.`countries`: Executing 
+[25, 16:52:12] TRUNCATE TABLE `cs306`.`countries`: OK
+[26, 16:52:12] PREPARE stmt FROM 'INSERT INTO `cs306`.`countries` (`iso_code`,`name`) VALUES(?,?)': Executing 
+[26, 16:52:12] PREPARE stmt FROM 'INSERT INTO `cs306`.`countries` (`iso_code`,`name`) VALUES(?,?)': OK
+[27, 16:52:14] DEALLOCATE PREPARE stmt: Executing 
+[27, 16:52:14] DEALLOCATE PREPARE stmt: OK
+[28, 16:52:26] SELECT * FROM cs306.countries
+LIMIT 0, 1000
+: Running...
+[28, 16:52:26] SELECT * FROM cs306.countries
+LIMIT 0, 1000
+: Fetching...
+[28, 16:52:26] SELECT * FROM cs306.countries
+LIMIT 0, 1000
+: 112 row(s) returned
