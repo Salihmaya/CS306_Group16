@@ -1,0 +1,76 @@
+[8, 17:21:06] Create TABLE Countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): Running...
+[8, 17:21:06] Create TABLE Countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): 0 row(s) affected
+[9, 17:21:06] CREATE TABLE Cigarette_advertisements(
+	iso_code VARCHAR(3) NOT NULL,
+    year INT,
+    ban_indicator INT,
+    
+    PRIMARY KEY (iso_code, year),
+    FOREIGN KEY (iso_code) REFERENCES Countries(iso_code)  ON DELETE CASCADE
+): Running...
+[9, 17:21:06] CREATE TABLE Cigarette_advertisements(
+	iso_code VARCHAR(3) NOT NULL,
+    year INT,
+    ban_indicator INT,
+    
+    PRIMARY KEY (iso_code, year),
+    FOREIGN KEY (iso_code) REFERENCES Countries(iso_code)  ON DELETE CASCADE
+): 0 row(s) affected
+[10, 17:21:23] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[10, 17:21:23] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[11, 17:21:23] SHOW DATABASES: Executing 
+[11, 17:21:23] SHOW DATABASES: OK
+[12, 17:21:24] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[12, 17:21:24] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[13, 17:21:24] SHOW COLUMNS FROM `cs306_project`.`countries`: Executing 
+[13, 17:21:24] SHOW COLUMNS FROM `cs306_project`.`countries`: OK
+[14, 17:24:08] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[14, 17:24:08] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[15, 17:24:08] SHOW DATABASES: Executing 
+[15, 17:24:08] SHOW DATABASES: OK
+[16, 17:24:09] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[16, 17:24:09] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[17, 17:24:09] SHOW COLUMNS FROM `cs306_project`.`countries`: Executing 
+[17, 17:24:09] SHOW COLUMNS FROM `cs306_project`.`countries`: OK
+[18, 17:24:12] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`countries` (`country_name`,`iso_code`) VALUES(?,?)': Executing 
+[18, 17:24:12] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`countries` (`country_name`,`iso_code`) VALUES(?,?)': OK
+[19, 17:24:13] DEALLOCATE PREPARE stmt: Executing 
+[19, 17:24:13] DEALLOCATE PREPARE stmt: OK
+[20, 17:24:29] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[20, 17:24:29] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[21, 17:24:29] SHOW DATABASES: Executing 
+[21, 17:24:29] SHOW DATABASES: OK
+[22, 17:24:31] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[22, 17:24:31] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[23, 17:24:31] SHOW COLUMNS FROM `cs306_project`.`cigarette_advertisements`: Executing 
+[23, 17:24:31] SHOW COLUMNS FROM `cs306_project`.`cigarette_advertisements`: OK
+[24, 17:24:35] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`cigarette_advertisements` (`iso_code`,`year`,`ban_indicator`) VALUES(?,?,?)': Executing 
+[24, 17:24:35] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`cigarette_advertisements` (`iso_code`,`year`,`ban_indicator`) VALUES(?,?,?)': OK
+[25, 17:24:42] DEALLOCATE PREPARE stmt: Executing 
+[25, 17:24:42] DEALLOCATE PREPARE stmt: OK
+[26, 17:25:19] SELECT * FROM cs306_project.countries
+LIMIT 0, 1000
+: Running...
+[26, 17:25:19] SELECT * FROM cs306_project.countries
+LIMIT 0, 1000
+: Fetching...
+[26, 17:25:19] SELECT * FROM cs306_project.countries
+LIMIT 0, 1000
+: 195 row(s) returned
+[27, 17:25:30] SELECT * FROM cs306_project.cigarette_advertisements
+LIMIT 0, 1000
+: Running...
+[27, 17:25:30] SELECT * FROM cs306_project.cigarette_advertisements
+LIMIT 0, 1000
+: Fetching...
+[27, 17:25:30] SELECT * FROM cs306_project.cigarette_advertisements
+LIMIT 0, 1000
+: 1000 row(s) returned
