@@ -1,4 +1,4 @@
-CREATE DATABASE hw;
+CREATE DATABASE cs306_project;
 USE cs306_project;
 
 Create TABLE Countries(
