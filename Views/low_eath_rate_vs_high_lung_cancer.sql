@@ -1,0 +1,12 @@
+CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT
+);
+
+INSERT INTO low_eath_rate_vs_high_lung_cancer (country_name, year)
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL;
