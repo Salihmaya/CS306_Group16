@@ -1,4 +1,4 @@
--- finds the lung cancer death rates of the countries with minimum advertisement bans in a specific year.
+-- finds the lung cancer death rates of the countries with minimum advertisement bans in a specific year
 
 SELECT lc.iso_code, lc.year, lc.male_death_rate, lc.female_death_rate
 FROM lung_cancer_deaths lc
