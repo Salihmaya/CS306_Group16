@@ -1,0 +1,20 @@
+DELIMITER $$
+CREATE PROCEDURE get_death_rate_smoking(IN p_iso_code VARCHAR(3))
+BEGIN
+    IF p_iso_code = 'USA' THEN
+        SELECT * FROM death_rate_smoking WHERE iso_code = p_iso_code AND year > 2010;
+    ELSEIF p_iso_code = 'GBR' THEN
+        SELECT * FROM death_rate_smoking WHERE iso_code = p_iso_code AND year < 2010;
+    ELSE
+        SELECT * FROM death_rate_smoking WHERE iso_code = p_iso_code;
+    END IF;
+END $$
+DELIMITER ;
+
+CALL get_death_rate_smoking('GBR');
+
+
+
+
+
+
