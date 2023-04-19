@@ -1,0 +1,1435 @@
+[1, 21:23:53] Apply changes to death-rate-smoking: Applying object changes ...
+[1, 21:23:58] Applying changes to death-rate-smoking...: 
+[1, 21:23:58] : Changes applied to death-rate-smoking
+[1, 21:23:59] Apply changes to death-rate-smoking: Changes applied
+[2, 21:27:12] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[2, 21:27:12] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[3, 21:27:12] SHOW DATABASES: Executing 
+[3, 21:27:12] SHOW DATABASES: OK
+[4, 21:27:24] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[4, 21:27:24] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[5, 21:28:41] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[5, 21:28:41] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[6, 21:30:00] Apply changes to iso_code: Applying object changes ...
+[6, 21:30:03] Applying changes to iso_code...: 
+[6, 21:30:11] Apply changes to iso_code: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2
+SQL Statement:
+CREATE TABLE `death-rate-smoking`.`iso_code` (
+)
+
+
+[7, 21:30:28] Apply changes to iso_code: Applying object changes ...
+[7, 21:30:31] Applying changes to iso_code...: 
+[7, 21:30:32] Apply changes to iso_code: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2
+SQL Statement:
+CREATE TABLE `death-rate-smoking`.`iso_code` (
+)
+
+
+[8, 21:30:43] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[8, 21:30:43] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[9, 21:30:43] SHOW DATABASES: Executing 
+[9, 21:30:43] SHOW DATABASES: OK
+[10, 21:30:50] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[10, 21:30:50] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[11, 21:31:16]  CREATE TABLE `death-rate-smoking`.`death-rate-smoking` (`iso_code` text, `year` int, `death_rate` double): Executing 
+[11, 21:31:16]  CREATE TABLE `death-rate-smoking`.`death-rate-smoking` (`iso_code` text, `year` int, `death_rate` double): OK
+[12, 21:31:16] PREPARE stmt FROM 'INSERT INTO `death-rate-smoking`.`death-rate-smoking` (`iso_code`,`year`,`death_rate`) VALUES(?,?,?)': Executing 
+[12, 21:31:16] PREPARE stmt FROM 'INSERT INTO `death-rate-smoking`.`death-rate-smoking` (`iso_code`,`year`,`death_rate`) VALUES(?,?,?)': OK
+[13, 21:31:37] DEALLOCATE PREPARE stmt: Executing 
+[13, 21:31:37] DEALLOCATE PREPARE stmt: OK
+[14, 21:38:12] Select * from death-rate-smoking: Running...
+[14, 21:38:12] Select * from death-rate-smoking: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-rate-smoking' at line 1
+[15, 21:38:16] Select * from death-rate-smoking: Running...
+[15, 21:38:16] Select * from death-rate-smoking: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-rate-smoking' at line 1
+[16, 21:38:46] Select * from columns
+LIMIT 0, 1000
+: Running...
+[16, 21:38:46] Select * from columns
+LIMIT 0, 1000
+: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[17, 21:38:59] SELECT * FROM `death-rate-smoking`.`death-rate-smoking`
+LIMIT 0, 1000
+: Running...
+[17, 21:38:59] SELECT * FROM `death-rate-smoking`.`death-rate-smoking`
+LIMIT 0, 1000
+: Fetching...
+[17, 21:39:00] SELECT * FROM `death-rate-smoking`.`death-rate-smoking`
+LIMIT 0, 1000
+: 1000 row(s) returned
+[18, 21:52:02] DROP DATABASE `death-rate-smoking`: Running...
+[18, 21:52:02] DROP DATABASE `death-rate-smoking`: 1 row(s) affected
+[19, 21:56:36] CREATE DATABASE CS306-Project: Running...
+[19, 21:56:36] CREATE DATABASE CS306-Project: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-Project' at line 1
+[20, 21:57:18] CREATE DATABASE CS306_Project: Running...
+[20, 21:57:18] CREATE DATABASE CS306_Project: 1 row(s) affected
+[21, 21:57:18] USE CS306_Project: Running...
+[21, 21:57:18] USE CS306_Project: 0 row(s) affected
+[22, 21:57:18] CREATE TABLE death_rate_smoking(iso_code VarChar(50),
+								year int,
+								death_rate double): Running...
+[22, 21:57:18] CREATE TABLE death_rate_smoking(iso_code VarChar(50),
+								year int,
+								death_rate double): 0 row(s) affected
+[23, 21:57:18] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[23, 21:57:18] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[23, 21:57:18] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: 0 row(s) returned
+[24, 21:57:38] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[24, 21:57:38] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[25, 21:57:38] SHOW DATABASES: Executing 
+[25, 21:57:38] SHOW DATABASES: OK
+[26, 21:57:45] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[26, 21:57:45] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[27, 21:57:45] SHOW COLUMNS FROM `cs306_project`.`death_rate_smoking`: Executing 
+[27, 21:57:45] SHOW COLUMNS FROM `cs306_project`.`death_rate_smoking`: OK
+[28, 21:57:51] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`death_rate_smoking` (`iso_code`,`year`,`death_rate`) VALUES(?,?,?)': Executing 
+[28, 21:57:51] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`death_rate_smoking` (`iso_code`,`year`,`death_rate`) VALUES(?,?,?)': OK
+[29, 21:58:11] DEALLOCATE PREPARE stmt: Executing 
+[29, 21:58:11] DEALLOCATE PREPARE stmt: OK
+[30, 21:58:45] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[30, 21:58:45] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[30, 21:58:45] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: 1000 row(s) returned
+[1, 21:28:46] CREATE DATABASE CS306_Project: Running...
+[1, 21:28:46] CREATE DATABASE CS306_Project: Error Code: 1007. Can't create database 'cs306_project'; database exists
+[2, 21:28:59] USE CS306_Project: Running...
+[2, 21:28:59] USE CS306_Project: 0 row(s) affected
+[3, 21:28:59] CREATE TABLE countries(iso_code VarChar(5) NOT NULL,
+						country_name VarChar(50),
+                        primary key (is_code)
+                        ): Running...
+[3, 21:28:59] CREATE TABLE countries(iso_code VarChar(5) NOT NULL,
+						country_name VarChar(50),
+                        primary key (is_code)
+                        ): Error Code: 1072. Key column 'is_code' doesn't exist in table
+[4, 21:29:14] USE CS306_Project: Running...
+[4, 21:29:14] USE CS306_Project: 0 row(s) affected
+[5, 21:29:14] CREATE TABLE countries(iso_code VarChar(5) NOT NULL,
+						country_name VarChar(50),
+                        primary key (iso_code)
+                        ): Running...
+[5, 21:29:14] CREATE TABLE countries(iso_code VarChar(5) NOT NULL,
+						country_name VarChar(50),
+                        primary key (iso_code)
+                        ): 0 row(s) affected
+[6, 21:29:14] CREATE TABLE death_rate_smoking(iso_code VarChar(50),
+								year int,
+								death_rate double,
+                                foreign key(iso_code) references countries(iso_code) ON DELETE CASCADE,
+                                primary key(year)
+                                ): Running...
+[6, 21:29:14] CREATE TABLE death_rate_smoking(iso_code VarChar(50),
+								year int,
+								death_rate double,
+                                foreign key(iso_code) references countries(iso_code) ON DELETE CASCADE,
+                                primary key(year)
+                                ): Error Code: 1050. Table 'death_rate_smoking' already exists
+[7, 21:30:30] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[7, 21:30:30] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[8, 21:30:30] SHOW DATABASES: Executing 
+[8, 21:30:30] SHOW DATABASES: OK
+[9, 21:30:31] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[9, 21:30:31] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[10, 21:30:31] SHOW COLUMNS FROM `cs306_project`.`countries`: Executing 
+[10, 21:30:31] SHOW COLUMNS FROM `cs306_project`.`countries`: OK
+[11, 21:30:39] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`countries` (`country_name`,`iso_code`) VALUES(?,?)': Executing 
+[11, 21:30:39] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`countries` (`country_name`,`iso_code`) VALUES(?,?)': OK
+[12, 21:30:40] DEALLOCATE PREPARE stmt: Executing 
+[12, 21:30:40] DEALLOCATE PREPARE stmt: OK
+[13, 21:31:16] SELECT * FROM countries
+LIMIT 0, 1000
+: Running...
+[13, 21:31:16] SELECT * FROM countries
+LIMIT 0, 1000
+: Fetching...
+[13, 21:31:16] SELECT * FROM countries
+LIMIT 0, 1000
+: 112 row(s) returned
+[14, 21:31:20] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[14, 21:31:20] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[14, 21:31:20] SELECT * FROM death_rate_smoking
+LIMIT 0, 1000
+: 1000 row(s) returned
+[1, 21:29:18] SELECT * FROM cs306_project.countries
+LIMIT 0, 1000
+: Running...
+[1, 21:29:18] SELECT * FROM cs306_project.countries
+LIMIT 0, 1000
+: Fetching...
+[1, 21:29:18] SELECT * FROM cs306_project.countries
+LIMIT 0, 1000
+: 112 row(s) returned
+[2, 21:29:22] SELECT * FROM cs306_project.death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[2, 21:29:22] SELECT * FROM cs306_project.death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[2, 21:29:22] SELECT * FROM cs306_project.death_rate_smoking
+LIMIT 0, 1000
+: 1000 row(s) returned
+[3, 21:30:07] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, l.year
+FROM death_rate_smoking l
+JOIN countries c ON l.iso_code = c.iso_code
+WHERE l.male_death_rate > (SELECT AVG(death_rate) FROM death_rate_smoking): Running...
+[3, 21:30:07] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, l.year
+FROM death_rate_smoking l
+JOIN countries c ON l.iso_code = c.iso_code
+WHERE l.male_death_rate > (SELECT AVG(death_rate) FROM death_rate_smoking): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[4, 21:30:56] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, l.year
+FROM death_rate_smoking l
+JOIN countries c ON l.iso_code = c.iso_code
+WHERE l.male_death_rate > (SELECT AVG(death_rate) FROM death_rate_smoking): Running...
+[4, 21:30:56] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, l.year
+FROM death_rate_smoking l
+JOIN countries c ON l.iso_code = c.iso_code
+WHERE l.male_death_rate > (SELECT AVG(death_rate) FROM death_rate_smoking): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[5, 21:33:11] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, d.year
+FROM death_rate_smoking d
+JOIN countries c ON d.iso_code = c.iso_code
+WHERE d.male_death_rate < (SELECT AVG(death_rate) FROM death_rate_smoking): Running...
+[5, 21:33:11] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, d.year
+FROM death_rate_smoking d
+JOIN countries c ON d.iso_code = c.iso_code
+WHERE d.male_death_rate < (SELECT AVG(death_rate) FROM death_rate_smoking): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[6, 21:34:15] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, d.year
+FROM death_rate_smoking d
+JOIN countries c ON d.iso_code = c.iso_code
+WHERE d.male_death_rate < (SELECT AVG(death_rate) FROM death_rate_smoking): Running...
+[6, 21:34:15] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, d.year
+FROM death_rate_smoking d
+JOIN countries c ON d.iso_code = c.iso_code
+WHERE d.male_death_rate < (SELECT AVG(death_rate) FROM death_rate_smoking): Error Code: 1054. Unknown column 'd.male_death_rate' in 'where clause'
+[7, 21:34:29] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, d.year
+FROM death_rate_smoking d
+JOIN countries c ON d.iso_code = c.iso_code
+WHERE d.death_rate < (SELECT AVG(death_rate) FROM death_rate_smoking): Running...
+[7, 21:34:29] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, d.year
+FROM death_rate_smoking d
+JOIN countries c ON d.iso_code = c.iso_code
+WHERE d.death_rate < (SELECT AVG(death_rate) FROM death_rate_smoking): 0 row(s) affected
+[8, 21:34:29] SELECT * FROM low_death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[8, 21:34:29] SELECT * FROM low_death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[8, 21:34:29] SELECT * FROM low_death_rate_smoking
+LIMIT 0, 1000
+: 1000 row(s) returned
+[9, 21:35:44] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, d.year
+FROM death_rate_smoking d
+JOIN countries c ON d.iso_code = c.iso_code
+WHERE d.death_rate < (SELECT AVG(death_rate) FROM death_rate_smoking): Running...
+[9, 21:35:44] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, d.year
+FROM death_rate_smoking d
+JOIN countries c ON d.iso_code = c.iso_code
+WHERE d.death_rate < (SELECT AVG(death_rate) FROM death_rate_smoking): Error Code: 1050. Table 'low_death_rate_smoking' already exists
+[10, 21:35:46] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, d.year
+FROM death_rate_smoking d
+JOIN countries c ON d.iso_code = c.iso_code
+WHERE d.death_rate < (SELECT AVG(death_rate) FROM death_rate_smoking): Running...
+[10, 21:35:46] CREATE VIEW low_death_rate_smoking AS
+SELECT c.country_name, d.year
+FROM death_rate_smoking d
+JOIN countries c ON d.iso_code = c.iso_code
+WHERE d.death_rate < (SELECT AVG(death_rate) FROM death_rate_smoking): Error Code: 1050. Table 'low_death_rate_smoking' already exists
+[11, 21:38:13] Apply changes to low_death_rate_smoking: Applying object changes ...
+[11, 21:38:17] Apply changes to low_death_rate_smoking: Selected name conflicts with existing view `low_death_rate_smoking`.
+[12, 21:38:34] SELECT * FROM cs306_project.low_death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[12, 21:38:34] SELECT * FROM cs306_project.low_death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[12, 21:38:34] SELECT * FROM cs306_project.low_death_rate_smoking
+LIMIT 0, 1000
+: 1000 row(s) returned
+[1, 13:49:20] Create Table lung_cancer_deaths(
+	year INT,
+    iso_code varchar(5) NOT NULL,
+    male_death_rate DECIMAL,
+	female_death_rate DECIMAL,
+    PRIMARY KEY (iso_code,year),
+    Foreign Key (iso_code) References countries(iso_code) ON DELETE CASCADE
+): Running...
+[1, 13:49:20] Create Table lung_cancer_deaths(
+	year INT,
+    iso_code varchar(5) NOT NULL,
+    male_death_rate DECIMAL,
+	female_death_rate DECIMAL,
+    PRIMARY KEY (iso_code,year),
+    Foreign Key (iso_code) References countries(iso_code) ON DELETE CASCADE
+): 0 row(s) affected
+[2, 13:49:44] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[2, 13:49:44] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[3, 13:49:44] SHOW DATABASES: Executing 
+[3, 13:49:44] SHOW DATABASES: OK
+[4, 13:49:48] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[4, 13:49:48] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[5, 13:49:48] SHOW COLUMNS FROM `cs306_project`.`lung_cancer_deaths`: Executing 
+[5, 13:49:48] SHOW COLUMNS FROM `cs306_project`.`lung_cancer_deaths`: OK
+[6, 13:49:55] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`lung_cancer_deaths` (`iso_code`,`year`,`male_death_rate`,`female_death_rate`) VALUES(?,?,?,?)': Executing 
+[6, 13:49:55] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`lung_cancer_deaths` (`iso_code`,`year`,`male_death_rate`,`female_death_rate`) VALUES(?,?,?,?)': OK
+[7, 13:50:14] DEALLOCATE PREPARE stmt: Executing 
+[7, 13:50:14] DEALLOCATE PREPARE stmt: OK
+[8, 13:51:02] SELECT * FROM cs306_project.lung_cancer_deaths
+LIMIT 0, 1000
+: Running...
+[8, 13:51:02] SELECT * FROM cs306_project.lung_cancer_deaths
+LIMIT 0, 1000
+: Fetching...
+[8, 13:51:02] SELECT * FROM cs306_project.lung_cancer_deaths
+LIMIT 0, 1000
+: 1000 row(s) returned
+[9, 13:53:28] DROP TABLE `cs306_project`.`lung_cancer_deaths`: Running...
+[9, 13:53:28] DROP TABLE `cs306_project`.`lung_cancer_deaths`: 0 row(s) affected
+[10, 13:53:36] Create Table lung_cancer_deaths(
+	year INT,
+    iso_code varchar(5) NOT NULL,
+    male_death_rate DECIMAL,
+	female_death_rate DECIMAL,
+    PRIMARY KEY (iso_code,year),
+    Foreign Key (iso_code) References countries(iso_code) ON DELETE CASCADE
+): Running...
+[10, 13:53:36] Create Table lung_cancer_deaths(
+	year INT,
+    iso_code varchar(5) NOT NULL,
+    male_death_rate DECIMAL,
+	female_death_rate DECIMAL,
+    PRIMARY KEY (iso_code,year),
+    Foreign Key (iso_code) References countries(iso_code) ON DELETE CASCADE
+): 0 row(s) affected
+[11, 13:53:48] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[11, 13:53:48] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[12, 13:53:48] SHOW DATABASES: Executing 
+[12, 13:53:48] SHOW DATABASES: OK
+[13, 13:53:50] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[13, 13:53:50] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[14, 13:53:50] SHOW COLUMNS FROM `cs306_project`.`lung_cancer_deaths`: Executing 
+[14, 13:53:50] SHOW COLUMNS FROM `cs306_project`.`lung_cancer_deaths`: OK
+[15, 13:53:56] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`lung_cancer_deaths` (`iso_code`,`year`,`male_death_rate`,`female_death_rate`) VALUES(?,?,?,?)': Executing 
+[15, 13:53:56] PREPARE stmt FROM 'INSERT INTO `cs306_project`.`lung_cancer_deaths` (`iso_code`,`year`,`male_death_rate`,`female_death_rate`) VALUES(?,?,?,?)': OK
+[16, 13:54:13] DEALLOCATE PREPARE stmt: Executing 
+[16, 13:54:13] DEALLOCATE PREPARE stmt: OK
+[17, 13:54:41] SELECT * FROM cs306_project.lung_cancer_deaths
+LIMIT 0, 1000
+: Running...
+[17, 13:54:41] SELECT * FROM cs306_project.lung_cancer_deaths
+LIMIT 0, 1000
+: Fetching...
+[17, 13:54:41] SELECT * FROM cs306_project.lung_cancer_deaths
+LIMIT 0, 1000
+: 1000 row(s) returned
+[18, 13:56:02] CREATE VIEW high_lung_cancer_deaths AS
+SELECT c.country_name, l.year
+FROM lung_cancer_deaths l
+JOIN countries c ON l.iso_code = c.iso_code
+WHERE l.male_death_rate > (SELECT AVG(male_death_rate) FROM lung_cancer_deaths) 
+AND l.female_death_rate > (SELECT AVG(female_death_rate) FROM lung_cancer_deaths): Running...
+[18, 13:56:02] CREATE VIEW high_lung_cancer_deaths AS
+SELECT c.country_name, l.year
+FROM lung_cancer_deaths l
+JOIN countries c ON l.iso_code = c.iso_code
+WHERE l.male_death_rate > (SELECT AVG(male_death_rate) FROM lung_cancer_deaths) 
+AND l.female_death_rate > (SELECT AVG(female_death_rate) FROM lung_cancer_deaths): 0 row(s) affected
+[19, 13:56:02] SELECT * FROM high_lung_cancer_deaths
+LIMIT 0, 1000
+: Running...
+[19, 13:56:02] SELECT * FROM high_lung_cancer_deaths
+LIMIT 0, 1000
+: Fetching...
+[19, 13:56:02] SELECT * FROM high_lung_cancer_deaths
+LIMIT 0, 1000
+: 1000 row(s) returned
+[20, 13:56:27] SELECT * FROM cs306_project.death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[20, 13:56:27] SELECT * FROM cs306_project.death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[20, 13:56:27] SELECT * FROM cs306_project.death_rate_smoking
+LIMIT 0, 1000
+: 1000 row(s) returned
+[21, 14:03:08] low_death_rate_smoking: Running...
+[21, 14:03:08] low_death_rate_smoking: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'low_death_rate_smoking' at line 1
+[22, 14:03:11] SELECT * FROM cs306_project.low_death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[22, 14:03:11] SELECT * FROM cs306_project.low_death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[22, 14:03:11] SELECT * FROM cs306_project.low_death_rate_smoking
+LIMIT 0, 1000
+: 1000 row(s) returned
+[23, 14:04:14] SELECT * FROM cs306_project.high_lung_cancer_deaths
+LIMIT 0, 1000
+: Running...
+[23, 14:04:14] SELECT * FROM cs306_project.high_lung_cancer_deaths
+LIMIT 0, 1000
+: Fetching...
+[23, 14:04:14] SELECT * FROM cs306_project.high_lung_cancer_deaths
+LIMIT 0, 1000
+: 1000 row(s) returned
+[24, 14:05:56] SELECT l.country_name, l.year, h.year
+FROM low_death_rate_smoking l
+JOIN high_lung_cancer_rate h
+ON l.country_name = h.country_name
+LIMIT 0, 1000
+: Running...
+[24, 14:05:56] SELECT l.country_name, l.year, h.year
+FROM low_death_rate_smoking l
+JOIN high_lung_cancer_rate h
+ON l.country_name = h.country_name
+LIMIT 0, 1000
+: Error Code: 1146. Table 'cs306_project.high_lung_cancer_rate' doesn't exist
+[25, 14:10:36] SELECT d.country_name, d.year, l.year
+FROM death_rate_smoking d
+JOIN lung_cancer_rate l
+ON d.country_name = l.country_name
+LIMIT 0, 1000
+: Running...
+[25, 14:10:36] SELECT d.country_name, d.year, l.year
+FROM death_rate_smoking d
+JOIN lung_cancer_rate l
+ON d.country_name = l.country_name
+LIMIT 0, 1000
+: Error Code: 1146. Table 'cs306_project.lung_cancer_rate' doesn't exist
+[26, 14:10:43] SELECT d.country_name, d.year, l.year
+FROM death_rate_smoking d
+JOIN lung_cancer_rate l
+ON d.country_name = l.country_name
+LIMIT 0, 1000
+: Running...
+[26, 14:10:43] SELECT d.country_name, d.year, l.year
+FROM death_rate_smoking d
+JOIN lung_cancer_rate l
+ON d.country_name = l.country_name
+LIMIT 0, 1000
+: Error Code: 1146. Table 'cs306_project.lung_cancer_rate' doesn't exist
+[27, 14:11:44] SHOW FULL TABLES IN database_name WHERE TABLE_TYPE LIKE 'VIEW': Running...
+[27, 14:11:44] SHOW FULL TABLES IN database_name WHERE TABLE_TYPE LIKE 'VIEW': Error Code: 1049. Unknown database 'database_name'
+[28, 14:20:43] SELECT country_name, year
+FROM high_lung_cancer_deaths
+EXCEPT
+SELECT country_name, year
+FROM low_death_rate_smoking
+
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+INNER JOIN JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE high_advertisementban.country_name IS NULL: Running...
+[28, 14:20:43] SELECT country_name, year
+FROM high_lung_cancer_deaths
+EXCEPT
+SELECT country_name, year
+FROM low_death_rate_smoking
+
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+INNER JOIN JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE high_advertisementban.country_name IS NULL: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM h' at line 7
+[29, 14:23:40] SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL
+LIMIT 0, 1000
+: Running...
+[29, 14:23:47] SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL
+LIMIT 0, 1000
+: Fetching...
+[29, 14:23:47] SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL
+LIMIT 0, 1000
+: 819 row(s) returned
+[30, 14:23:50] SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL
+LIMIT 0, 1000
+: Running...
+[30, 14:23:57] SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL
+LIMIT 0, 1000
+: Fetching...
+[30, 14:23:57] SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL
+LIMIT 0, 1000
+: 819 row(s) returned
+[31, 14:29:48] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): Running...
+[31, 14:29:48] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): 0 row(s) affected
+[32, 14:29:48] INSERT INTO joined_table
+
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: Running...
+[32, 14:29:48] INSERT INTO joined_table
+
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: Error Code: 1146. Table 'cs306_project.joined_table' doesn't exist
+[33, 14:30:17] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): Running...
+[33, 14:30:17] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): Error Code: 1050. Table 'low_eath_rate_vs_high_lung_cancer' already exists
+[34, 14:31:09] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: Running...
+[34, 14:31:10] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: 0 row(s) affected
+[35, 14:31:14] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): Running...
+[35, 14:31:14] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): 0 row(s) affected
+[36, 14:31:14] INSERT INTO low_eath_rate_vs_high_lung_cancer
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: Running...
+[36, 14:31:14] INSERT INTO low_eath_rate_vs_high_lung_cancer
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: Error Code: 1136. Column count doesn't match value count at row 1
+[37, 14:31:49] SELECT * FROM cs306_project.low_eath_rate_vs_high_lung_cancer
+LIMIT 0, 1000
+: Running...
+[37, 14:31:49] SELECT * FROM cs306_project.low_eath_rate_vs_high_lung_cancer
+LIMIT 0, 1000
+: Fetching...
+[37, 14:31:49] SELECT * FROM cs306_project.low_eath_rate_vs_high_lung_cancer
+LIMIT 0, 1000
+: 0 row(s) returned
+[38, 14:31:56] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: Running...
+[38, 14:31:56] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: 0 row(s) affected
+[39, 14:32:21] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): Running...
+[39, 14:32:21] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): 0 row(s) affected
+[40, 14:32:21] INSERT INTO low_eath_rate_vs_high_lung_cancer
+SELECT h.country_name, h.year, h.lung_cancer_rate, l.smoking_death_rate
+FROM high_lung_cancer_deaths h
+LEFT JOIN low_death_rate_smoking l
+ON h.country_name = l.country_name AND h.year = l.year: Running...
+[40, 14:32:21] INSERT INTO low_eath_rate_vs_high_lung_cancer
+SELECT h.country_name, h.year, h.lung_cancer_rate, l.smoking_death_rate
+FROM high_lung_cancer_deaths h
+LEFT JOIN low_death_rate_smoking l
+ON h.country_name = l.country_name AND h.year = l.year: Error Code: 1054. Unknown column 'h.lung_cancer_rate' in 'field list'
+[41, 14:32:47] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: Running...
+[41, 14:32:47] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: 0 row(s) affected
+[42, 14:32:50] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): Running...
+[42, 14:32:50] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): 0 row(s) affected
+[43, 14:32:50] SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL
+LIMIT 0, 1000
+: Running...
+[43, 14:32:56] SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL
+LIMIT 0, 1000
+: Fetching...
+[43, 14:32:56] SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL
+LIMIT 0, 1000
+: 819 row(s) returned
+[44, 14:33:16] SELECT * FROM cs306_project.low_eath_rate_vs_high_lung_cancer
+LIMIT 0, 1000
+: Running...
+[44, 14:33:16] SELECT * FROM cs306_project.low_eath_rate_vs_high_lung_cancer
+LIMIT 0, 1000
+: Fetching...
+[44, 14:33:16] SELECT * FROM cs306_project.low_eath_rate_vs_high_lung_cancer
+LIMIT 0, 1000
+: 0 row(s) returned
+[45, 14:33:29] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: Running...
+[45, 14:33:29] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: 0 row(s) affected
+[46, 14:33:34] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): Running...
+[46, 14:33:34] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): 0 row(s) affected
+[47, 14:33:34] INSERT INTO low_eath_rate_vs_high_lung_cancer
+
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: Running...
+[47, 14:33:34] INSERT INTO low_eath_rate_vs_high_lung_cancer
+
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: Error Code: 1136. Column count doesn't match value count at row 1
+[48, 14:35:03] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: Running...
+[48, 14:35:03] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: 0 row(s) affected
+[49, 14:35:05] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): Running...
+[49, 14:35:05] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT,
+   lung_cancer_rate FLOAT,
+   smoking_death_rate FLOAT
+): 0 row(s) affected
+[50, 14:35:05] INSERT INTO low_eath_rate_vs_high_lung_cancer (country_name, year)
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: Running...
+[50, 14:35:13] INSERT INTO low_eath_rate_vs_high_lung_cancer (country_name, year)
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: 819 row(s) affected
+Records: 819  Duplicates: 0  Warnings: 0
+[51, 14:35:21] SELECT * FROM cs306_project.low_eath_rate_vs_high_lung_cancer
+LIMIT 0, 1000
+: Running...
+[51, 14:35:21] SELECT * FROM cs306_project.low_eath_rate_vs_high_lung_cancer
+LIMIT 0, 1000
+: Fetching...
+[51, 14:35:21] SELECT * FROM cs306_project.low_eath_rate_vs_high_lung_cancer
+LIMIT 0, 1000
+: 819 row(s) returned
+[52, 14:36:46] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: Running...
+[52, 14:36:46] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: 0 row(s) affected
+[53, 14:36:50] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT
+): Running...
+[53, 14:36:50] CREATE TABLE low_eath_rate_vs_high_lung_cancer (
+   country_name VARCHAR(50),
+   year INT
+): 0 row(s) affected
+[54, 14:36:50] INSERT INTO low_eath_rate_vs_high_lung_cancer (country_name, year)
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: Running...
+[54, 14:36:58] INSERT INTO low_eath_rate_vs_high_lung_cancer (country_name, year)
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: 819 row(s) affected
+Records: 819  Duplicates: 0  Warnings: 0
+[55, 14:37:02] SELECT * FROM cs306_project.low_eath_rate_vs_high_lung_cancer
+LIMIT 0, 1000
+: Running...
+[55, 14:37:03] SELECT * FROM cs306_project.low_eath_rate_vs_high_lung_cancer
+LIMIT 0, 1000
+: Fetching...
+[55, 14:37:03] SELECT * FROM cs306_project.low_eath_rate_vs_high_lung_cancer
+LIMIT 0, 1000
+: 819 row(s) returned
+[56, 14:44:40] SELECT country_name, year, lung_cancer_rate, NULL as smoking_death_rate
+FROM high_lung_cancer_deaths
+WHERE (country_name, year) NOT IN (
+    SELECT country_name, year FROM low_death_rate_smoking
+)
+UNION
+SELECT country_name, year, NULL as lung_cancer_rate, smoking_death_rate
+FROM low_death_rate_smoking
+WHERE (country_name, year) NOT IN (
+    SELECT country_name, year FROM high_lung_cancer_deaths
+): Running...
+[56, 14:44:40] SELECT country_name, year, lung_cancer_rate, NULL as smoking_death_rate
+FROM high_lung_cancer_deaths
+WHERE (country_name, year) NOT IN (
+    SELECT country_name, year FROM low_death_rate_smoking
+)
+UNION
+SELECT country_name, year, NULL as lung_cancer_rate, smoking_death_rate
+FROM low_death_rate_smoking
+WHERE (country_name, year) NOT IN (
+    SELECT country_name, year FROM high_lung_cancer_deaths
+): Error Code: 1054. Unknown column 'lung_cancer_rate' in 'field list'
+[57, 14:45:48] SELECT country_name, year, lung_cancer_rate, smoking_death_rate
+FROM (
+    SELECT country_name, year, NULL as lung_cancer_rate, NULL as smoking_death_rate
+    FROM high_lung_cancer_deaths
+    WHERE (country_name, year) NOT IN (
+        SELECT country_name, year FROM low_death_rate_smoking
+    )
+    UNION
+    SELECT country_name, year, NULL as lung_cancer_rate, NULL as smoking_death_rate
+    FROM low_death_rate_smoking
+    WHERE (country_name, year) NOT IN (
+        SELECT country_name, year FROM high_lung_cancer_deaths
+    )
+    UNION
+    SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year, 
+           high_lung_cancer_deaths.lung_cancer_rate, low_death_rate_smoking.smoking_death_rate
+    FROM high_lung_cancer_deaths
+    INNER JOIN low_death_rate_smoking
+    ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+    AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+) as combined_table
+ORDER BY country_name, year
+LIMIT 0, 1000
+: Running...
+[57, 14:45:48] SELECT country_name, year, lung_cancer_rate, smoking_death_rate
+FROM (
+    SELECT country_name, year, NULL as lung_cancer_rate, NULL as smoking_death_rate
+    FROM high_lung_cancer_deaths
+    WHERE (country_name, year) NOT IN (
+        SELECT country_name, year FROM low_death_rate_smoking
+    )
+    UNION
+    SELECT country_name, year, NULL as lung_cancer_rate, NULL as smoking_death_rate
+    FROM low_death_rate_smoking
+    WHERE (country_name, year) NOT IN (
+        SELECT country_name, year FROM high_lung_cancer_deaths
+    )
+    UNION
+    SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year, 
+           high_lung_cancer_deaths.lung_cancer_rate, low_death_rate_smoking.smoking_death_rate
+    FROM high_lung_cancer_deaths
+    INNER JOIN low_death_rate_smoking
+    ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+    AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+) as combined_table
+ORDER BY country_name, year
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'high_lung_cancer_deaths.lung_cancer_rate' in 'field list'
+[58, 14:46:38] SELECT country_name, year
+FROM high_lung_cancer_deaths
+EXCEPT
+SELECT country_name, year
+FROM low_death_rate_smoking: Running...
+[58, 14:46:38] SELECT country_name, year
+FROM high_lung_cancer_deaths
+EXCEPT
+SELECT country_name, year
+FROM low_death_rate_smoking: Fetching...
+[58, 14:46:38] SELECT country_name, year
+FROM high_lung_cancer_deaths
+EXCEPT
+SELECT country_name, year
+FROM low_death_rate_smoking: 819 row(s) returned
+[59, 14:47:27] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: Running...
+[59, 14:47:27] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer`: 0 row(s) affected
+[60, 14:47:34] CREATE TABLE low_eath_rate_vs_high_lung_cancer_leftjoin (
+   country_name VARCHAR(50),
+   year INT
+): Running...
+[60, 14:47:34] CREATE TABLE low_eath_rate_vs_high_lung_cancer_leftjoin (
+   country_name VARCHAR(50),
+   year INT
+): 0 row(s) affected
+[61, 14:47:34] INSERT INTO low_eath_rate_vs_high_lung_cancer (country_name, year)
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: Running...
+[61, 14:47:34] INSERT INTO low_eath_rate_vs_high_lung_cancer (country_name, year)
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: Error Code: 1146. Table 'cs306_project.low_eath_rate_vs_high_lung_cancer' doesn't exist
+[62, 14:48:10] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer_leftjoin`: Running...
+[62, 14:48:10] DROP TABLE `cs306_project`.`low_eath_rate_vs_high_lung_cancer_leftjoin`: 0 row(s) affected
+[63, 14:48:15] CREATE TABLE low_eath_rate_vs_high_lung_cancer_leftjoin (
+   country_name VARCHAR(50),
+   year INT
+): Running...
+[63, 14:48:15] CREATE TABLE low_eath_rate_vs_high_lung_cancer_leftjoin (
+   country_name VARCHAR(50),
+   year INT
+): 0 row(s) affected
+[64, 14:48:15] INSERT INTO low_eath_rate_vs_high_lung_cancer_leftjoin (country_name, year)
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: Running...
+[64, 14:48:23] INSERT INTO low_eath_rate_vs_high_lung_cancer_leftjoin (country_name, year)
+SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
+FROM high_lung_cancer_deaths
+LEFT JOIN low_death_rate_smoking
+ON high_lung_cancer_deaths.country_name = low_death_rate_smoking.country_name
+AND high_lung_cancer_deaths.year = low_death_rate_smoking.year
+WHERE low_death_rate_smoking.country_name IS NULL: 819 row(s) affected
+Records: 819  Duplicates: 0  Warnings: 0
+[65, 14:48:27] CREATE TABLE low_eath_rate_vs_high_lung_cancer_except (
+   country_name VARCHAR(50),
+   year INT
+): Running...
+[65, 14:48:27] CREATE TABLE low_eath_rate_vs_high_lung_cancer_except (
+   country_name VARCHAR(50),
+   year INT
+): 0 row(s) affected
+[66, 14:48:27] INSERT INTO low_eath_rate_vs_high_lung_cancer_except (country_name, year)
+SELECT country_name, year
+FROM high_lung_cancer_deaths
+EXCEPT
+SELECT country_name, year
+FROM low_death_rate_smoking: Running...
+[66, 14:48:27] INSERT INTO low_eath_rate_vs_high_lung_cancer_except (country_name, year)
+SELECT country_name, year
+FROM high_lung_cancer_deaths
+EXCEPT
+SELECT country_name, year
+FROM low_death_rate_smoking: 819 row(s) affected
+Records: 819  Duplicates: 0  Warnings: 0
+[1, 13:23:14] SELECT * FROM cs306_project.death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[1, 13:23:14] SELECT * FROM cs306_project.death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[1, 13:23:14] SELECT * FROM cs306_project.death_rate_smoking
+LIMIT 0, 1000
+: 1000 row(s) returned
+[2, 13:30:08] Apply changes to low_death_rate_vs_high_lung_cancer_except: Applying object changes ...
+[2, 13:30:13] Applying changes to low_death_rate_vs_high_lung_cancer_except...: 
+[2, 13:30:13] : Changes applied to low_death_rate_vs_high_lung_cancer_except
+[2, 13:30:14] Apply changes to low_death_rate_vs_high_lung_cancer_except: Changes applied
+[3, 13:30:29] Apply changes to low_death_rate_vs_high_lung_cancer_leftjoin: Applying object changes ...
+[3, 13:30:30] Applying changes to low_death_rate_vs_high_lung_cancer_leftjoin...: 
+[3, 13:30:30] : Changes applied to low_death_rate_vs_high_lung_cancer_leftjoin
+[3, 13:30:31] Apply changes to low_death_rate_vs_high_lung_cancer_leftjoin: Changes applied
+[4, 13:31:03] SELECT * FROM cs306_project.low_death_rate_vs_high_lung_cancer_except
+LIMIT 0, 1000
+: Running...
+[4, 13:31:03] SELECT * FROM cs306_project.low_death_rate_vs_high_lung_cancer_except
+LIMIT 0, 1000
+: Fetching...
+[4, 13:31:03] SELECT * FROM cs306_project.low_death_rate_vs_high_lung_cancer_except
+LIMIT 0, 1000
+: 819 row(s) returned
+[5, 13:31:06] SELECT * FROM cs306_project.low_death_rate_vs_high_lung_cancer_leftjoin
+LIMIT 0, 1000
+: Running...
+[5, 13:31:06] SELECT * FROM cs306_project.low_death_rate_vs_high_lung_cancer_leftjoin
+LIMIT 0, 1000
+: Fetching...
+[5, 13:31:06] SELECT * FROM cs306_project.low_death_rate_vs_high_lung_cancer_leftjoin
+LIMIT 0, 1000
+: 819 row(s) returned
+[6, 13:32:41] SELECT *
+FROM death_rate_smoking
+WHERE iso_code IN (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+)
+LIMIT 0, 1000
+: Running...
+[6, 13:32:41] SELECT *
+FROM death_rate_smoking
+WHERE iso_code IN (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+)
+LIMIT 0, 1000
+: Fetching...
+[6, 13:32:41] SELECT *
+FROM death_rate_smoking
+WHERE iso_code IN (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+)
+LIMIT 0, 1000
+: 1000 row(s) returned
+[7, 13:33:26] SELECT *
+FROM low_death_rate_smoking
+WHERE iso_code IN (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+)
+LIMIT 0, 1000
+: Running...
+[7, 13:33:26] SELECT *
+FROM low_death_rate_smoking
+WHERE iso_code IN (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+)
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'iso_code' in 'IN/ALL/ANY subquery'
+[8, 13:33:51] SELECT *
+FROM death_rate_smoking
+WHERE iso_code IN (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+)
+LIMIT 0, 1000
+: Running...
+[8, 13:33:51] SELECT *
+FROM death_rate_smoking
+WHERE iso_code IN (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+)
+LIMIT 0, 1000
+: Fetching...
+[8, 13:33:51] SELECT *
+FROM death_rate_smoking
+WHERE iso_code IN (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+)
+LIMIT 0, 1000
+: 1000 row(s) returned
+[9, 13:33:56] SELECT *
+FROM death_rate_smoking
+WHERE EXISTS (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+  AND iso_code = death_rate_smoking.iso_code
+)
+LIMIT 0, 1000
+: Running...
+[9, 13:33:56] SELECT *
+FROM death_rate_smoking
+WHERE EXISTS (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+  AND iso_code = death_rate_smoking.iso_code
+)
+LIMIT 0, 1000
+: Fetching...
+[9, 13:33:56] SELECT *
+FROM death_rate_smoking
+WHERE EXISTS (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+  AND iso_code = death_rate_smoking.iso_code
+)
+LIMIT 0, 1000
+: 1000 row(s) returned
+[10, 13:34:03] SELECT *
+FROM death_rate_smoking
+WHERE iso_code IN (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+)
+LIMIT 0, 1000
+: Running...
+[10, 13:34:03] SELECT *
+FROM death_rate_smoking
+WHERE iso_code IN (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+)
+LIMIT 0, 1000
+: Fetching...
+[10, 13:34:03] SELECT *
+FROM death_rate_smoking
+WHERE iso_code IN (
+  SELECT iso_code
+  FROM death_rate_smoking
+  WHERE year = 1990
+  AND death_rate > 20
+)
+LIMIT 0, 1000
+: 1000 row(s) returned
+[11, 13:41:57] SELECT * FROM cs306_project.lung_cancer_deaths
+LIMIT 0, 1000
+: Running...
+[11, 13:41:57] SELECT * FROM cs306_project.lung_cancer_deaths
+LIMIT 0, 1000
+: Fetching...
+[11, 13:41:57] SELECT * FROM cs306_project.lung_cancer_deaths
+LIMIT 0, 1000
+: 1000 row(s) returned
+[12, 13:45:59] SELECT d.iso_code, d.year, COUNT(*) AS total_deaths, 
+       l.male_death_rate, l.female_death_rate
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+GROUP BY d.iso_code, d.year
+HAVING COUNT(*) > 20
+LIMIT 0, 1000
+: Running...
+[12, 13:45:59] SELECT d.iso_code, d.year, COUNT(*) AS total_deaths, 
+       l.male_death_rate, l.female_death_rate
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+GROUP BY d.iso_code, d.year
+HAVING COUNT(*) > 20
+LIMIT 0, 1000
+: Fetching...
+[12, 13:45:59] SELECT d.iso_code, d.year, COUNT(*) AS total_deaths, 
+       l.male_death_rate, l.female_death_rate
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+GROUP BY d.iso_code, d.year
+HAVING COUNT(*) > 20
+LIMIT 0, 1000
+: 0 row(s) returned
+[13, 13:46:05] SELECT d.iso_code, d.year, COUNT(*) AS total_deaths, 
+       l.male_death_rate, l.female_death_rate
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+GROUP BY d.iso_code, d.year
+HAVING COUNT(*) > 1
+LIMIT 0, 1000
+: Running...
+[13, 13:46:05] SELECT d.iso_code, d.year, COUNT(*) AS total_deaths, 
+       l.male_death_rate, l.female_death_rate
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+GROUP BY d.iso_code, d.year
+HAVING COUNT(*) > 1
+LIMIT 0, 1000
+: Fetching...
+[13, 13:46:05] SELECT d.iso_code, d.year, COUNT(*) AS total_deaths, 
+       l.male_death_rate, l.female_death_rate
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+GROUP BY d.iso_code, d.year
+HAVING COUNT(*) > 1
+LIMIT 0, 1000
+: 0 row(s) returned
+[14, 13:46:10] SELECT d.iso_code, d.year, COUNT(*) AS total_deaths, 
+       l.male_death_rate, l.female_death_rate
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+GROUP BY d.iso_code, d.year
+HAVING COUNT(*) > 0
+LIMIT 0, 1000
+: Running...
+[14, 13:46:10] SELECT d.iso_code, d.year, COUNT(*) AS total_deaths, 
+       l.male_death_rate, l.female_death_rate
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+GROUP BY d.iso_code, d.year
+HAVING COUNT(*) > 0
+LIMIT 0, 1000
+: Fetching...
+[14, 13:46:10] SELECT d.iso_code, d.year, COUNT(*) AS total_deaths, 
+       l.male_death_rate, l.female_death_rate
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+GROUP BY d.iso_code, d.year
+HAVING COUNT(*) > 0
+LIMIT 0, 1000
+: 1000 row(s) returned
+[15, 13:51:47] SELECT COUNT(*) AS num_rows
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 20 AND (l.male_death_rate > 20 OR l.female_death_rate > 20)
+LIMIT 0, 1000
+: Running...
+[15, 13:51:47] SELECT COUNT(*) AS num_rows
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 20 AND (l.male_death_rate > 20 OR l.female_death_rate > 20)
+LIMIT 0, 1000
+: Fetching...
+[15, 13:51:47] SELECT COUNT(*) AS num_rows
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 20 AND (l.male_death_rate > 20 OR l.female_death_rate > 20)
+LIMIT 0, 1000
+: 1 row(s) returned
+[16, 13:52:14] SELECT COUNT(*) AS num_rows
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 40 AND (l.male_death_rate > 40 OR l.female_death_rate > 40)
+LIMIT 0, 1000
+: Running...
+[16, 13:52:14] SELECT COUNT(*) AS num_rows
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 40 AND (l.male_death_rate > 40 OR l.female_death_rate > 40)
+LIMIT 0, 1000
+: Fetching...
+[16, 13:52:14] SELECT COUNT(*) AS num_rows
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 40 AND (l.male_death_rate > 40 OR l.female_death_rate > 40)
+LIMIT 0, 1000
+: 1 row(s) returned
+[17, 13:53:56] SELECT COUNT(DISTINCT d.iso_code, d.year) AS common_columns
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 20 AND (l.male_death_rate > 20 OR l.female_death_rate > 20)
+LIMIT 0, 1000
+: Running...
+[17, 13:53:56] SELECT COUNT(DISTINCT d.iso_code, d.year) AS common_columns
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 20 AND (l.male_death_rate > 20 OR l.female_death_rate > 20)
+LIMIT 0, 1000
+: Fetching...
+[17, 13:53:56] SELECT COUNT(DISTINCT d.iso_code, d.year) AS common_columns
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 20 AND (l.male_death_rate > 20 OR l.female_death_rate > 20)
+LIMIT 0, 1000
+: 1 row(s) returned
+[18, 13:54:19] SELECT COUNT(DISTINCT d.iso_code, d.year) AS common_columns
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 240 AND (l.male_death_rate > 40 OR l.female_death_rate > 40)
+LIMIT 0, 1000
+: Running...
+[18, 13:54:19] SELECT COUNT(DISTINCT d.iso_code, d.year) AS common_columns
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 240 AND (l.male_death_rate > 40 OR l.female_death_rate > 40)
+LIMIT 0, 1000
+: Fetching...
+[18, 13:54:19] SELECT COUNT(DISTINCT d.iso_code, d.year) AS common_columns
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 240 AND (l.male_death_rate > 40 OR l.female_death_rate > 40)
+LIMIT 0, 1000
+: 1 row(s) returned
+[19, 13:54:29] SELECT COUNT(DISTINCT d.iso_code, d.year) AS common_columns
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 40 AND (l.male_death_rate > 40 OR l.female_death_rate > 40)
+LIMIT 0, 1000
+: Running...
+[19, 13:54:29] SELECT COUNT(DISTINCT d.iso_code, d.year) AS common_columns
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 40 AND (l.male_death_rate > 40 OR l.female_death_rate > 40)
+LIMIT 0, 1000
+: Fetching...
+[19, 13:54:29] SELECT COUNT(DISTINCT d.iso_code, d.year) AS common_columns
+FROM death_rate_smoking AS d
+JOIN lung_cancer_deaths AS l ON d.iso_code = l.iso_code AND d.year = l.year
+WHERE d.death_rate > 40 AND (l.male_death_rate > 40 OR l.female_death_rate > 40)
+LIMIT 0, 1000
+: 1 row(s) returned
+[20, 14:00:29] SELECT MIN(death_rate) AS min_rate, MAX(death_rate) AS max_rate
+FROM death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[20, 14:00:29] SELECT MIN(death_rate) AS min_rate, MAX(death_rate) AS max_rate
+FROM death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[20, 14:00:29] SELECT MIN(death_rate) AS min_rate, MAX(death_rate) AS max_rate
+FROM death_rate_smoking
+LIMIT 0, 1000
+: 1 row(s) returned
+[21, 14:01:09] ALTER TABLE death_rate_smoking
+ADD CONSTRAINT death_rate_constraint
+CHECK (death_rate = (SELECT MIN(death_rate) FROM death_rate_smoking)
+       OR death_rate = (SELECT MAX(death_rate) FROM death_rate_smoking)): Running...
+[21, 14:01:09] ALTER TABLE death_rate_smoking
+ADD CONSTRAINT death_rate_constraint
+CHECK (death_rate = (SELECT MIN(death_rate) FROM death_rate_smoking)
+       OR death_rate = (SELECT MAX(death_rate) FROM death_rate_smoking)): Error Code: 3815. An expression of a check constraint 'death_rate_constraint' contains disallowed function.
+[22, 14:03:31] CREATE TRIGGER death_rate_trigger
+BEFORE INSERT ON death_rate_smoking
+FOR EACH ROW
+BEGIN
+    IF NEW.death_rate NOT BETWEEN (SELECT MIN(death_rate) FROM death_rate_smoking) AND (SELECT MAX(death_rate) FROM death_rate_smoking) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'The death rate value must be within the allowed range.';
+    END IF;
+END: Running...
+[22, 14:03:31] CREATE TRIGGER death_rate_trigger
+BEFORE INSERT ON death_rate_smoking
+FOR EACH ROW
+BEGIN
+    IF NEW.death_rate NOT BETWEEN (SELECT MIN(death_rate) FROM death_rate_smoking) AND (SELECT MAX(death_rate) FROM death_rate_smoking) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'The death rate value must be within the allowed range.';
+    END IF;
+END: 0 row(s) affected
+[23, 14:03:56] INSERT INTO death_rate_smoking (iso_code, year, death_rate)
+VALUES ('USA', 2022, 15.6): Running...
+[23, 14:03:56] INSERT INTO death_rate_smoking (iso_code, year, death_rate)
+VALUES ('USA', 2022, 15.6): 1 row(s) affected
+[24, 14:04:03] SELECT MIN(death_rate) AS min_rate, MAX(death_rate) AS max_rate
+FROM death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[24, 14:04:03] SELECT MIN(death_rate) AS min_rate, MAX(death_rate) AS max_rate
+FROM death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[24, 14:04:03] SELECT MIN(death_rate) AS min_rate, MAX(death_rate) AS max_rate
+FROM death_rate_smoking
+LIMIT 0, 1000
+: 1 row(s) returned
+[25, 14:04:03] CREATE TRIGGER death_rate_trigger
+BEFORE INSERT ON death_rate_smoking
+FOR EACH ROW
+BEGIN
+    IF NEW.death_rate NOT BETWEEN (SELECT MIN(death_rate) FROM death_rate_smoking) AND (SELECT MAX(death_rate) FROM death_rate_smoking) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'The death rate value must be within the allowed range.';
+    END IF;
+END: Running...
+[25, 14:04:03] CREATE TRIGGER death_rate_trigger
+BEFORE INSERT ON death_rate_smoking
+FOR EACH ROW
+BEGIN
+    IF NEW.death_rate NOT BETWEEN (SELECT MIN(death_rate) FROM death_rate_smoking) AND (SELECT MAX(death_rate) FROM death_rate_smoking) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'The death rate value must be within the allowed range.';
+    END IF;
+END: Error Code: 1359. Trigger already exists
+[26, 14:04:26] SELECT MIN(death_rate) AS min_rate, MAX(death_rate) AS max_rate
+FROM death_rate_smoking
+LIMIT 0, 1000
+: Running...
+[26, 14:04:26] SELECT MIN(death_rate) AS min_rate, MAX(death_rate) AS max_rate
+FROM death_rate_smoking
+LIMIT 0, 1000
+: Fetching...
+[26, 14:04:26] SELECT MIN(death_rate) AS min_rate, MAX(death_rate) AS max_rate
+FROM death_rate_smoking
+LIMIT 0, 1000
+: 1 row(s) returned
+[27, 14:04:26] CREATE TRIGGER death_rate_trigger
+BEFORE INSERT ON death_rate_smoking
+FOR EACH ROW
+BEGIN
+    IF NEW.death_rate NOT BETWEEN (SELECT MIN(death_rate) FROM death_rate_smoking) AND (SELECT MAX(death_rate) FROM death_rate_smoking) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'The death rate value must be within the allowed range.';
+    END IF;
+END: Running...
+[27, 14:04:26] CREATE TRIGGER death_rate_trigger
+BEFORE INSERT ON death_rate_smoking
+FOR EACH ROW
+BEGIN
+    IF NEW.death_rate NOT BETWEEN (SELECT MIN(death_rate) FROM death_rate_smoking) AND (SELECT MAX(death_rate) FROM death_rate_smoking) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'The death rate value must be within the allowed range.';
+    END IF;
+END: Error Code: 1359. Trigger already exists
+[28, 14:04:32] INSERT INTO death_rate_smoking (iso_code, year, death_rate)
+VALUES ('USA', 2022, 1000): Running...
+[28, 14:04:32] INSERT INTO death_rate_smoking (iso_code, year, death_rate)
+VALUES ('USA', 2022, 1000): Error Code: 1644. The death rate value must be within the allowed range.
+[29, 14:13:08] CREATE TRIGGER death_rate_smoking_before_update
+BEFORE UPDATE ON death_rate_smoking
+FOR EACH ROW
+BEGIN
+    IF NEW.death_rate < (SELECT MIN(death_rate) FROM death_rate_smoking) THEN
+        SET NEW.death_rate = (SELECT MIN(death_rate) FROM death_rate_smoking): Running...
+[29, 14:13:08] CREATE TRIGGER death_rate_smoking_before_update
+BEFORE UPDATE ON death_rate_smoking
+FOR EACH ROW
+BEGIN
+    IF NEW.death_rate < (SELECT MIN(death_rate) FROM death_rate_smoking) THEN
+        SET NEW.death_rate = (SELECT MIN(death_rate) FROM death_rate_smoking): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 6
+[30, 14:13:40] CREATE TRIGGER death_rate_smoking_before_update
+BEFORE UPDATE ON death_rate_smoking
+FOR EACH ROW
+BEGIN
+    IF NEW.death_rate < (SELECT MIN(death_rate) FROM death_rate_smoking) THEN
+        SET NEW.death_rate = (SELECT MIN(death_rate) FROM death_rate_smoking);
+    ELSEIF NEW.death_rate > (SELECT MAX(death_rate) FROM death_rate_smoking) THEN
+        SET NEW.death_rate = (SELECT MAX(death_rate) FROM death_rate_smoking);
+    END IF;
+END: Running...
+[30, 14:13:40] CREATE TRIGGER death_rate_smoking_before_update
+BEFORE UPDATE ON death_rate_smoking
+FOR EACH ROW
+BEGIN
+    IF NEW.death_rate < (SELECT MIN(death_rate) FROM death_rate_smoking) THEN
+        SET NEW.death_rate = (SELECT MIN(death_rate) FROM death_rate_smoking);
+    ELSEIF NEW.death_rate > (SELECT MAX(death_rate) FROM death_rate_smoking) THEN
+        SET NEW.death_rate = (SELECT MAX(death_rate) FROM death_rate_smoking);
+    END IF;
+END: 0 row(s) affected
+[31, 14:13:45] INSERT INTO death_rate_smoking (iso_code, year, death_rate)
+VALUES ('USA', 2022, 1000): Running...
+[31, 14:13:46] INSERT INTO death_rate_smoking (iso_code, year, death_rate)
+VALUES ('USA', 2022, 1000): Error Code: 1644. The death rate value must be within the allowed range.
+[32, 14:13:52] UPDATE death_rate_smoking SET death_rate = 30.0 WHERE iso_code = 'USA': Running...
+[32, 14:13:52] UPDATE death_rate_smoking SET death_rate = 30.0 WHERE iso_code = 'USA': Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column. 
+To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
+[33, 14:30:10] CREATE PROCEDURE get_death_rate_smoking(IN p_iso_code VARCHAR(3))
+BEGIN
+    IF p_iso_code = 'USA' THEN
+        SELECT * FROM death_rate_smoking WHERE iso_code = p_iso_code AND year > 2010;
+    ELSEIF p_iso_code = 'GBR' THEN
+        SELECT * FROM death_rate_smoking WHERE iso_code = p_iso_code AND year < 2010;
+    ELSE
+        SELECT * FROM death_rate_smoking WHERE iso_code = p_iso_code;
+    END IF;
+END: Running...
+[33, 14:30:10] CREATE PROCEDURE get_death_rate_smoking(IN p_iso_code VARCHAR(3))
+BEGIN
+    IF p_iso_code = 'USA' THEN
+        SELECT * FROM death_rate_smoking WHERE iso_code = p_iso_code AND year > 2010;
+    ELSEIF p_iso_code = 'GBR' THEN
+        SELECT * FROM death_rate_smoking WHERE iso_code = p_iso_code AND year < 2010;
+    ELSE
+        SELECT * FROM death_rate_smoking WHERE iso_code = p_iso_code;
+    END IF;
+END: 0 row(s) affected
+[34, 14:30:27] CALL get_death_rate_smoking('USA'): Running...
+[34, 14:30:27] CALL get_death_rate_smoking('USA'): Fetching...
+[34, 14:30:27] CALL get_death_rate_smoking('USA'): 10 row(s) returned
+[35, 14:30:39] CALL get_death_rate_smoking('GBR'): Running...
+[35, 14:30:39] CALL get_death_rate_smoking('GBR'): Fetching...
+[35, 14:30:39] CALL get_death_rate_smoking('GBR'): 20 row(s) returned
