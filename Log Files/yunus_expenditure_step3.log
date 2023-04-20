@@ -1,0 +1,295 @@
+[2, 19:06:22] Apply changes to twenty: Applying object changes ...
+[2, 19:06:23] Applying changes to twenty...: 
+[2, 19:06:23] : Changes applied to twenty
+[2, 19:06:24] Apply changes to twenty: Changes applied
+[3, 19:07:38] Create Table countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): Running...
+[3, 19:07:38] Create Table countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): 0 row(s) affected
+[4, 19:07:38] Create Table public_health_expenditure(
+	iso_code varchar(5) NOT NULL,
+	year INT,
+    expenditure_pc_gdp double,
+    primary key (iso_code, year),
+    foreign key (iso_code) references countries(iso_code) ON DELETE CASCADE
+): Running...
+[4, 19:07:38] Create Table public_health_expenditure(
+	iso_code varchar(5) NOT NULL,
+	year INT,
+    expenditure_pc_gdp double,
+    primary key (iso_code, year),
+    foreign key (iso_code) references countries(iso_code) ON DELETE CASCADE
+): 0 row(s) affected
+[5, 19:07:50] Create Table countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): Running...
+[5, 19:07:50] Create Table countries(
+	iso_code Varchar(5) NOT NULL,
+    country_name Varchar(50),
+    primary key (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[6, 19:07:59] Create Table lung_cancer_deaths(
+	year INT,
+    iso_code varchar(5) NOT NULL,
+    male_death_rate DECIMAL,
+	female_death_rate DECIMAL,
+    PRIMARY KEY (iso_code,year),
+    Foreign Key (iso_code) References countries(iso_code) ON DELETE CASCADE
+): Running...
+[6, 19:07:59] Create Table lung_cancer_deaths(
+	year INT,
+    iso_code varchar(5) NOT NULL,
+    male_death_rate DECIMAL,
+	female_death_rate DECIMAL,
+    PRIMARY KEY (iso_code,year),
+    Foreign Key (iso_code) References countries(iso_code) ON DELETE CASCADE
+): 0 row(s) affected
+[7, 19:08:19] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[7, 19:08:19] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[8, 19:08:19] SHOW DATABASES: Executing 
+[8, 19:08:19] SHOW DATABASES: OK
+[9, 19:08:23] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[9, 19:08:23] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[10, 19:08:23] SHOW COLUMNS FROM `twenty`.`countries`: Executing 
+[10, 19:08:23] SHOW COLUMNS FROM `twenty`.`countries`: OK
+[11, 19:08:27] PREPARE stmt FROM 'INSERT INTO `twenty`.`countries` (`country_name`,`iso_code`) VALUES(?,?)': Executing 
+[11, 19:08:27] PREPARE stmt FROM 'INSERT INTO `twenty`.`countries` (`country_name`,`iso_code`) VALUES(?,?)': OK
+[12, 19:08:27] DEALLOCATE PREPARE stmt: Executing 
+[12, 19:08:27] DEALLOCATE PREPARE stmt: OK
+[13, 19:08:39] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[13, 19:08:39] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[14, 19:08:39] SHOW DATABASES: Executing 
+[14, 19:08:39] SHOW DATABASES: OK
+[15, 19:08:43] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[15, 19:08:43] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[16, 19:08:43] SHOW COLUMNS FROM `twenty`.`lung_cancer_deaths`: Executing 
+[16, 19:08:43] SHOW COLUMNS FROM `twenty`.`lung_cancer_deaths`: OK
+[17, 19:08:50] PREPARE stmt FROM 'INSERT INTO `twenty`.`lung_cancer_deaths` (`iso_code`,`year`,`male_death_rate`,`female_death_rate`) VALUES(?,?,?,?)': Executing 
+[17, 19:08:50] PREPARE stmt FROM 'INSERT INTO `twenty`.`lung_cancer_deaths` (`iso_code`,`year`,`male_death_rate`,`female_death_rate`) VALUES(?,?,?,?)': OK
+[18, 19:09:00] DEALLOCATE PREPARE stmt: Executing 
+[18, 19:09:00] DEALLOCATE PREPARE stmt: OK
+[19, 19:09:28] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[19, 19:09:28] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[20, 19:09:28] SHOW DATABASES: Executing 
+[20, 19:09:28] SHOW DATABASES: OK
+[21, 19:09:32] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[21, 19:09:32] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[22, 19:09:32] SHOW COLUMNS FROM `twenty`.`public_health_expenditure`: Executing 
+[22, 19:09:32] SHOW COLUMNS FROM `twenty`.`public_health_expenditure`: OK
+[23, 19:09:36] PREPARE stmt FROM 'INSERT INTO `twenty`.`public_health_expenditure` (`iso_code`,`year`,`expenditure_pc_gdp`) VALUES(?,?,?)': Executing 
+[23, 19:09:36] PREPARE stmt FROM 'INSERT INTO `twenty`.`public_health_expenditure` (`iso_code`,`year`,`expenditure_pc_gdp`) VALUES(?,?,?)': OK
+[24, 19:09:38] DEALLOCATE PREPARE stmt: Executing 
+[24, 19:09:38] DEALLOCATE PREPARE stmt: OK
+[25, 19:10:57] CREATE VIEW high_expenditure_years AS
+SELECT c.country_name, p.year, p.expenditure_pc_gdp
+FROM public_health_expenditure p
+JOIN countries c ON p.iso_code = c.iso_code
+WHERE p.expenditure_pc_gdp > (SELECT AVG(expenditure_pc_gdp) FROM public_health_expenditure): Running...
+[25, 19:10:57] CREATE VIEW high_expenditure_years AS
+SELECT c.country_name, p.year, p.expenditure_pc_gdp
+FROM public_health_expenditure p
+JOIN countries c ON p.iso_code = c.iso_code
+WHERE p.expenditure_pc_gdp > (SELECT AVG(expenditure_pc_gdp) FROM public_health_expenditure): 0 row(s) affected
+[26, 19:10:57] SELECT * FROM high_expenditure_years
+LIMIT 0, 1000
+: Running...
+[26, 19:10:57] SELECT * FROM high_expenditure_years
+LIMIT 0, 1000
+: Fetching...
+[26, 19:10:57] SELECT * FROM high_expenditure_years
+LIMIT 0, 1000
+: 1000 row(s) returned
+[27, 19:11:12] CREATE VIEW high_lung_cancer_deaths AS
+SELECT c.country_name, l.year
+FROM lung_cancer_deaths l
+JOIN countries c ON l.iso_code = c.iso_code
+WHERE l.male_death_rate > (SELECT AVG(male_death_rate) FROM lung_cancer_deaths) 
+AND l.female_death_rate > (SELECT AVG(female_death_rate) FROM lung_cancer_deaths): Running...
+[27, 19:11:12] CREATE VIEW high_lung_cancer_deaths AS
+SELECT c.country_name, l.year
+FROM lung_cancer_deaths l
+JOIN countries c ON l.iso_code = c.iso_code
+WHERE l.male_death_rate > (SELECT AVG(male_death_rate) FROM lung_cancer_deaths) 
+AND l.female_death_rate > (SELECT AVG(female_death_rate) FROM lung_cancer_deaths): 0 row(s) affected
+[28, 19:11:12] SELECT * FROM high_lung_cancer_deaths
+LIMIT 0, 1000
+: Running...
+[28, 19:11:12] SELECT * FROM high_lung_cancer_deaths
+LIMIT 0, 1000
+: Fetching...
+[28, 19:11:12] SELECT * FROM high_lung_cancer_deaths
+LIMIT 0, 1000
+: 1000 row(s) returned
+[29, 19:12:23] SELECT high_expenditure_years.country_name, high_expenditure_years.year
+FROM high_expenditure_years
+LEFT JOIN high_lung_cancer_deaths
+ON high_expenditure_years.country_name = high_lung_cancer_deaths.country_name
+AND high_expenditure_years.year = high_lung_cancer_deaths.year
+WHERE high_lung_cancer_deaths.country_name IS NULL
+LIMIT 0, 1000
+: Running...
+[29, 19:12:24] SELECT high_expenditure_years.country_name, high_expenditure_years.year
+FROM high_expenditure_years
+LEFT JOIN high_lung_cancer_deaths
+ON high_expenditure_years.country_name = high_lung_cancer_deaths.country_name
+AND high_expenditure_years.year = high_lung_cancer_deaths.year
+WHERE high_lung_cancer_deaths.country_name IS NULL
+LIMIT 0, 1000
+: Fetching...
+[29, 19:12:24] SELECT high_expenditure_years.country_name, high_expenditure_years.year
+FROM high_expenditure_years
+LEFT JOIN high_lung_cancer_deaths
+ON high_expenditure_years.country_name = high_lung_cancer_deaths.country_name
+AND high_expenditure_years.year = high_lung_cancer_deaths.year
+WHERE high_lung_cancer_deaths.country_name IS NULL
+LIMIT 0, 1000
+: 509 row(s) returned
+[30, 19:12:24] SELECT country_name, year
+FROM high_expenditure_years
+EXCEPT
+SELECT country_name, year
+FROM high_lung_cancer_deaths: Running...
+[30, 19:12:24] SELECT country_name, year
+FROM high_expenditure_years
+EXCEPT
+SELECT country_name, year
+FROM high_lung_cancer_deaths: Fetching...
+[30, 19:12:24] SELECT country_name, year
+FROM high_expenditure_years
+EXCEPT
+SELECT country_name, year
+FROM high_lung_cancer_deaths: 509 row(s) returned
+[31, 19:13:44] SELECT *
+FROM high_lung_cancer_deaths
+WHERE (country_name, year) IN
+  (SELECT country_name, year
+   FROM high_expenditure_years)
+LIMIT 0, 1000
+: Running...
+[31, 19:13:44] SELECT *
+FROM high_lung_cancer_deaths
+WHERE (country_name, year) IN
+  (SELECT country_name, year
+   FROM high_expenditure_years)
+LIMIT 0, 1000
+: Fetching...
+[31, 19:13:44] SELECT *
+FROM high_lung_cancer_deaths
+WHERE (country_name, year) IN
+  (SELECT country_name, year
+   FROM high_expenditure_years)
+LIMIT 0, 1000
+: 611 row(s) returned
+[32, 19:13:44] SELECT *
+FROM high_lung_cancer_deaths l
+WHERE EXISTS (
+  SELECT country_name, year
+  FROM high_expenditure_years e
+  WHERE l.country_name = e.country_name
+    AND l.year = e.year
+)
+LIMIT 0, 1000
+: Running...
+[32, 19:13:44] SELECT *
+FROM high_lung_cancer_deaths l
+WHERE EXISTS (
+  SELECT country_name, year
+  FROM high_expenditure_years e
+  WHERE l.country_name = e.country_name
+    AND l.year = e.year
+)
+LIMIT 0, 1000
+: Fetching...
+[32, 19:13:44] SELECT *
+FROM high_lung_cancer_deaths l
+WHERE EXISTS (
+  SELECT country_name, year
+  FROM high_expenditure_years e
+  WHERE l.country_name = e.country_name
+    AND l.year = e.year
+)
+LIMIT 0, 1000
+: 611 row(s) returned
+[33, 19:14:05] SELECT he.year, SUM(he.expenditure_pc_gdp) AS total_expenditure_pc_gdp, AVG(he.expenditure_pc_gdp) AS avg_expenditure_pc_gdp
+FROM public_health_expenditure he
+INNER JOIN high_expenditure_years hey ON 
+	he.year = hey.year AND he.iso_code = (SELECT iso_code FROM countries WHERE country_name = hey.country_name)
+GROUP BY he.year
+HAVING COUNT(he.iso_code) > 1
+LIMIT 0, 1000
+: Running...
+[33, 19:14:05] SELECT he.year, SUM(he.expenditure_pc_gdp) AS total_expenditure_pc_gdp, AVG(he.expenditure_pc_gdp) AS avg_expenditure_pc_gdp
+FROM public_health_expenditure he
+INNER JOIN high_expenditure_years hey ON 
+	he.year = hey.year AND he.iso_code = (SELECT iso_code FROM countries WHERE country_name = hey.country_name)
+GROUP BY he.year
+HAVING COUNT(he.iso_code) > 1
+LIMIT 0, 1000
+: Fetching...
+[33, 19:14:05] SELECT he.year, SUM(he.expenditure_pc_gdp) AS total_expenditure_pc_gdp, AVG(he.expenditure_pc_gdp) AS avg_expenditure_pc_gdp
+FROM public_health_expenditure he
+INNER JOIN high_expenditure_years hey ON 
+	he.year = hey.year AND he.iso_code = (SELECT iso_code FROM countries WHERE country_name = hey.country_name)
+GROUP BY he.year
+HAVING COUNT(he.iso_code) > 1
+LIMIT 0, 1000
+: 51 row(s) returned
+[34, 19:14:25] ALTER TABLE public_health_expenditure
+ADD CONSTRAINT chk_expenditure_pc_gdp CHECK (expenditure_pc_gdp >= 0 AND expenditure_pc_gdp <= 100): Running...
+[34, 19:14:25] ALTER TABLE public_health_expenditure
+ADD CONSTRAINT chk_expenditure_pc_gdp CHECK (expenditure_pc_gdp >= 0 AND expenditure_pc_gdp <= 100): 2177 row(s) affected
+Records: 2177  Duplicates: 0  Warnings: 0
+[35, 19:14:25] INSERT INTO public_health_expenditure(iso_code, year, expenditure_pc_gdp)
+VALUES ('WWW', 2023, 120): Running...
+[35, 19:14:25] INSERT INTO public_health_expenditure(iso_code, year, expenditure_pc_gdp)
+VALUES ('WWW', 2023, 120): Error Code: 3819. Check constraint 'chk_expenditure_pc_gdp' is violated.
+[36, 19:15:11] CREATE PROCEDURE GetAverageExpenditureByCountry(IN iso_code_param VARCHAR(5))
+BEGIN
+    SELECT 
+        c.iso_code,
+        c.country_name,
+        AVG(p.expenditure_pc_gdp) AS avg_expenditure_pc_gdp
+    FROM
+        countries c
+    JOIN
+        public_health_expenditure p ON c.iso_code = p.iso_code
+    WHERE
+        c.iso_code = iso_code_param
+    GROUP BY
+        c.iso_code, c.country_name;
+END: Running...
+[36, 19:15:11] CREATE PROCEDURE GetAverageExpenditureByCountry(IN iso_code_param VARCHAR(5))
+BEGIN
+    SELECT 
+        c.iso_code,
+        c.country_name,
+        AVG(p.expenditure_pc_gdp) AS avg_expenditure_pc_gdp
+    FROM
+        countries c
+    JOIN
+        public_health_expenditure p ON c.iso_code = p.iso_code
+    WHERE
+        c.iso_code = iso_code_param
+    GROUP BY
+        c.iso_code, c.country_name;
+END: 0 row(s) affected
+[37, 19:15:11] -- Trying out the two values as specified in the task
+
+CALL GetAverageExpenditureByCountry('KOR'): Running...
+[37, 19:15:11] -- Trying out the two values as specified in the task
+
+CALL GetAverageExpenditureByCountry('KOR'): Fetching...
+[37, 19:15:11] -- Trying out the two values as specified in the task
+
+CALL GetAverageExpenditureByCountry('KOR'): 1 row(s) returned
+[38, 19:15:11] CALL GetAverageExpenditureByCountry('JPN'): Running...
+[38, 19:15:11] CALL GetAverageExpenditureByCountry('JPN'): Fetching...
+[38, 19:15:11] CALL GetAverageExpenditureByCountry('JPN'): 1 row(s) returned
