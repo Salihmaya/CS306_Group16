@@ -1,3 +1,4 @@
+-- Select statements were utilized with IN and EXISTS OPERATORS
 
 Select *
 FROM high_smoke_quit_help
