@@ -1,0 +1,309 @@
+[2, 13:07:09] CREATE VIEW high_lung_cancer_deaths AS
+SELECT c.country_name, l.year
+FROM lung_cancer_deaths l
+JOIN countries c ON l.iso_code = c.iso_code
+WHERE l.male_death_rate > (SELECT AVG(male_death_rate) FROM lung_cancer_deaths) 
+AND l.female_death_rate > (SELECT AVG(female_death_rate) FROM lung_cancer_deaths): Running...
+[2, 13:07:09] CREATE VIEW high_lung_cancer_deaths AS
+SELECT c.country_name, l.year
+FROM lung_cancer_deaths l
+JOIN countries c ON l.iso_code = c.iso_code
+WHERE l.male_death_rate > (SELECT AVG(male_death_rate) FROM lung_cancer_deaths) 
+AND l.female_death_rate > (SELECT AVG(female_death_rate) FROM lung_cancer_deaths): 0 row(s) affected
+[3, 13:07:09] SELECT * FROM high_lung_cancer_deaths
+LIMIT 0, 1000
+: Running...
+[3, 13:07:09] SELECT * FROM high_lung_cancer_deaths
+LIMIT 0, 1000
+: Fetching...
+[3, 13:07:09] SELECT * FROM high_lung_cancer_deaths
+LIMIT 0, 1000
+: 1000 row(s) returned
+[4, 13:07:09] CREATE VIEW high_advertisementban AS
+SELECT c.country_name, adv.ban_indicator, adv.year
+FROM cigarette_advertisements adv
+JOIN countries c ON adv.iso_code = c.iso_code
+WHERE adv.ban_indicator > (SELECT AVG(ban_indicator) FROM cigarette_advertisements): Running...
+[4, 13:07:09] CREATE VIEW high_advertisementban AS
+SELECT c.country_name, adv.ban_indicator, adv.year
+FROM cigarette_advertisements adv
+JOIN countries c ON adv.iso_code = c.iso_code
+WHERE adv.ban_indicator > (SELECT AVG(ban_indicator) FROM cigarette_advertisements): 0 row(s) affected
+[5, 13:07:09] SELECT * FROM high_advertisementban
+LIMIT 0, 1000
+: Running...
+[5, 13:07:09] SELECT * FROM high_advertisementban
+LIMIT 0, 1000
+: Fetching...
+[5, 13:07:09] SELECT * FROM high_advertisementban
+LIMIT 0, 1000
+: 516 row(s) returned
+[6, 13:07:44] SELECT country_name, year
+FROM high_advertisementban
+EXCEPT
+SELECT country_name, year
+FROM high_lung_cancer_deaths: Running...
+[6, 13:07:44] SELECT country_name, year
+FROM high_advertisementban
+EXCEPT
+SELECT country_name, year
+FROM high_lung_cancer_deaths: Fetching...
+[6, 13:07:44] SELECT country_name, year
+FROM high_advertisementban
+EXCEPT
+SELECT country_name, year
+FROM high_lung_cancer_deaths: 353 row(s) returned
+[7, 13:07:44] SELECT a.country_name, a.year
+FROM high_advertisementban a
+LEFT OUTER JOIN high_lung_cancer_deaths l
+ON l.country_name = a.country_name AND l.year = a.year
+WHERE l.country_name IS NULL
+LIMIT 0, 1000
+: Running...
+[7, 13:07:44] SELECT a.country_name, a.year
+FROM high_advertisementban a
+LEFT OUTER JOIN high_lung_cancer_deaths l
+ON l.country_name = a.country_name AND l.year = a.year
+WHERE l.country_name IS NULL
+LIMIT 0, 1000
+: Fetching...
+[7, 13:07:44] SELECT a.country_name, a.year
+FROM high_advertisementban a
+LEFT OUTER JOIN high_lung_cancer_deaths l
+ON l.country_name = a.country_name AND l.year = a.year
+WHERE l.country_name IS NULL
+LIMIT 0, 1000
+: 353 row(s) returned
+[8, 13:07:59] SELECT *
+FROM high_lung_cancer_deaths
+WHERE (country_name, year) IN
+  (SELECT country_name, year
+   FROM high_advertisementban)
+LIMIT 0, 1000
+: Running...
+[8, 13:07:59] SELECT *
+FROM high_lung_cancer_deaths
+WHERE (country_name, year) IN
+  (SELECT country_name, year
+   FROM high_advertisementban)
+LIMIT 0, 1000
+: Fetching...
+[8, 13:07:59] SELECT *
+FROM high_lung_cancer_deaths
+WHERE (country_name, year) IN
+  (SELECT country_name, year
+   FROM high_advertisementban)
+LIMIT 0, 1000
+: 163 row(s) returned
+[9, 13:07:59] SELECT *
+FROM high_lung_cancer_deaths l
+WHERE EXISTS (
+  SELECT country_name, year
+  FROM high_advertisementban a
+  WHERE l.country_name = a.country_name
+    AND l.year = a.year
+    
+)
+LIMIT 0, 1000
+: Running...
+[9, 13:07:59] SELECT *
+FROM high_lung_cancer_deaths l
+WHERE EXISTS (
+  SELECT country_name, year
+  FROM high_advertisementban a
+  WHERE l.country_name = a.country_name
+    AND l.year = a.year
+    
+)
+LIMIT 0, 1000
+: Fetching...
+[9, 13:07:59] SELECT *
+FROM high_lung_cancer_deaths l
+WHERE EXISTS (
+  SELECT country_name, year
+  FROM high_advertisementban a
+  WHERE l.country_name = a.country_name
+    AND l.year = a.year
+    
+)
+LIMIT 0, 1000
+: 163 row(s) returned
+[10, 13:09:14] SELECT lc.iso_code, lc.year, lc.male_death_rate, lc.female_death_rate
+FROM lung_cancer_deaths lc
+INNER JOIN (
+  SELECT ca.iso_code, ca.year
+  FROM cigarette_advertisements ca
+  GROUP BY ca.iso_code, ca.year
+  HAVING MIN(ca.ban_indicator) = (
+    SELECT MIN(ban_indicator)
+    FROM cigarette_advertisements
+  )
+) AS ca
+ON lc.iso_code = ca.iso_code AND lc.year = ca.year
+LIMIT 0, 1000
+: Running...
+[10, 13:09:14] SELECT lc.iso_code, lc.year, lc.male_death_rate, lc.female_death_rate
+FROM lung_cancer_deaths lc
+INNER JOIN (
+  SELECT ca.iso_code, ca.year
+  FROM cigarette_advertisements ca
+  GROUP BY ca.iso_code, ca.year
+  HAVING MIN(ca.ban_indicator) = (
+    SELECT MIN(ban_indicator)
+    FROM cigarette_advertisements
+  )
+) AS ca
+ON lc.iso_code = ca.iso_code AND lc.year = ca.year
+LIMIT 0, 1000
+: Fetching...
+[10, 13:09:14] SELECT lc.iso_code, lc.year, lc.male_death_rate, lc.female_death_rate
+FROM lung_cancer_deaths lc
+INNER JOIN (
+  SELECT ca.iso_code, ca.year
+  FROM cigarette_advertisements ca
+  GROUP BY ca.iso_code, ca.year
+  HAVING MIN(ca.ban_indicator) = (
+    SELECT MIN(ban_indicator)
+    FROM cigarette_advertisements
+  )
+) AS ca
+ON lc.iso_code = ca.iso_code AND lc.year = ca.year
+LIMIT 0, 1000
+: 187 row(s) returned
+[11, 13:09:59] ALTER TABLE lung_cancer_deaths DROP CONSTRAINT male_death_rate_check: Running...
+[11, 13:09:59] ALTER TABLE lung_cancer_deaths DROP CONSTRAINT male_death_rate_check: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[12, 13:09:59] ALTER TABLE lung_cancer_deaths DROP CONSTRAINT female_death_rate_check: Running...
+[12, 13:09:59] ALTER TABLE lung_cancer_deaths DROP CONSTRAINT female_death_rate_check: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[13, 13:10:11] ALTER TABLE lung_cancer_deaths
+ADD CONSTRAINT male_death_rate_check CHECK (male_death_rate >= 0 AND male_death_rate <= 100): Running...
+[13, 13:10:11] ALTER TABLE lung_cancer_deaths
+ADD CONSTRAINT male_death_rate_check CHECK (male_death_rate >= 0 AND male_death_rate <= 100): 4572 row(s) affected
+Records: 4572  Duplicates: 0  Warnings: 0
+[14, 13:10:11] ALTER TABLE lung_cancer_deaths
+ADD CONSTRAINT female_death_rate_check CHECK (female_death_rate >= 0 AND female_death_rate <= 100): Running...
+[14, 13:10:11] ALTER TABLE lung_cancer_deaths
+ADD CONSTRAINT female_death_rate_check CHECK (female_death_rate >= 0 AND female_death_rate <= 100): 4572 row(s) affected
+Records: 4572  Duplicates: 0  Warnings: 0
+[15, 13:10:11] INSERT INTO lung_cancer_deaths(iso_code, year, male_death_rate, female_death_rate)
+VALUES ('XXX', 2023, -5, 140): Running...
+[15, 13:10:11] INSERT INTO lung_cancer_deaths(iso_code, year, male_death_rate, female_death_rate)
+VALUES ('XXX', 2023, -5, 140): Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`cs306`.`lung_cancer_deaths`, CONSTRAINT `lung_cancer_deaths_ibfk_1` FOREIGN KEY (`iso_code`) REFERENCES `countries` (`iso_code`) ON DELETE CASCADE)
+
+[21, 13:13:17] CREATE TRIGGER before_insert_male
+BEFORE INSERT ON lung_cancer_deaths
+FOR EACH ROW
+BEGIN
+  IF NEW.male_death_rate < 0 THEN
+    SET NEW.male_death_rate = 0;
+  ELSEIF NEW.male_death_rate > 100 THEN
+    SET NEW.male_death_rate = 100;
+  END IF;
+END;: Running...
+[21, 13:13:17] CREATE TRIGGER before_insert_male
+BEFORE INSERT ON lung_cancer_deaths
+FOR EACH ROW
+BEGIN
+  IF NEW.male_death_rate < 0 THEN
+    SET NEW.male_death_rate = 0;
+  ELSEIF NEW.male_death_rate > 100 THEN
+    SET NEW.male_death_rate = 100;
+  END IF;
+END;: 0 row(s) affected
+[22, 13:13:17] CREATE TRIGGER before_insert_female
+BEFORE INSERT ON lung_cancer_deaths
+FOR EACH ROW
+BEGIN
+  IF NEW.female_death_rate < 0 THEN
+    SET NEW.female_death_rate = 0;
+  ELSEIF NEW.female_death_rate > 100 THEN
+    SET NEW.female_death_rate = 100;
+  END IF;
+END;: Running...
+[22, 13:13:17] CREATE TRIGGER before_insert_female
+BEFORE INSERT ON lung_cancer_deaths
+FOR EACH ROW
+BEGIN
+  IF NEW.female_death_rate < 0 THEN
+    SET NEW.female_death_rate = 0;
+  ELSEIF NEW.female_death_rate > 100 THEN
+    SET NEW.female_death_rate = 100;
+  END IF;
+END;: 0 row(s) affected
+[23, 13:13:17] CREATE TRIGGER before_update_male
+BEFORE UPDATE ON lung_cancer_deaths
+FOR EACH ROW
+BEGIN
+  IF NEW.male_death_rate < 0 THEN
+    SET NEW.male_death_rate = 0;
+  ELSEIF NEW.male_death_rate > 100 THEN
+    SET NEW.male_death_rate = 100;
+  END IF;
+END;: Running...
+[23, 13:13:17] CREATE TRIGGER before_update_male
+BEFORE UPDATE ON lung_cancer_deaths
+FOR EACH ROW
+BEGIN
+  IF NEW.male_death_rate < 0 THEN
+    SET NEW.male_death_rate = 0;
+  ELSEIF NEW.male_death_rate > 100 THEN
+    SET NEW.male_death_rate = 100;
+  END IF;
+END;: 0 row(s) affected
+[24, 13:13:17] CREATE TRIGGER before_update_female
+BEFORE UPDATE ON lung_cancer_deaths
+FOR EACH ROW
+BEGIN
+  IF NEW.female_death_rate < 0 THEN
+    SET NEW.female_death_rate = 0;
+  ELSEIF NEW.female_death_rate > 100 THEN
+    SET NEW.female_death_rate = 100;
+  END IF;
+END;: Running...
+[24, 13:13:17] CREATE TRIGGER before_update_female
+BEFORE UPDATE ON lung_cancer_deaths
+FOR EACH ROW
+BEGIN
+  IF NEW.female_death_rate < 0 THEN
+    SET NEW.female_death_rate = 0;
+  ELSEIF NEW.female_death_rate > 100 THEN
+    SET NEW.female_death_rate = 100;
+  END IF;
+END;: 0 row(s) affected
+[25, 13:13:35] CREATE PROCEDURE GetAverageDeathsByCountry(IN iso_code_param VARCHAR(5))
+BEGIN
+    SELECT 
+        c.iso_code,
+        AVG(d.male_death_rate) AS avg_male_death_rate,
+        AVG(d.female_death_rate) AS avg_female_death_rate
+    FROM
+        countries c
+	JOIN
+        lung_cancer_deaths d ON c.iso_code = d.iso_code
+    WHERE
+        c.iso_code = iso_code_param
+    GROUP BY
+        c.iso_code, c.country_name;
+END: Running...
+[25, 13:13:35] CREATE PROCEDURE GetAverageDeathsByCountry(IN iso_code_param VARCHAR(5))
+BEGIN
+    SELECT 
+        c.iso_code,
+        AVG(d.male_death_rate) AS avg_male_death_rate,
+        AVG(d.female_death_rate) AS avg_female_death_rate
+    FROM
+        countries c
+	JOIN
+        lung_cancer_deaths d ON c.iso_code = d.iso_code
+    WHERE
+        c.iso_code = iso_code_param
+    GROUP BY
+        c.iso_code, c.country_name;
+END: 0 row(s) affected
+[26, 13:13:35] CALL GetAverageDeathsByCountry('TUR'): Running...
+[26, 13:13:35] CALL GetAverageDeathsByCountry('TUR'): Fetching...
+[26, 13:13:35] CALL GetAverageDeathsByCountry('TUR'): 1 row(s) returned
+[27, 13:13:35] CALL GetAverageDeathsByCountry('ITA'): Running...
+[27, 13:13:35] CALL GetAverageDeathsByCountry('ITA'): Fetching...
+[27, 13:13:35] CALL GetAverageDeathsByCountry('ITA'): 1 row(s) returned
