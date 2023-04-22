@@ -1,0 +1,84 @@
+[46, 23:07:04] Select *
+FROM high_smoke_quit_help
+Where (country_name, year) IN
+(SELECT country_name,year
+FROM low_death_rate_smoking)
+LIMIT 0, 1000
+: Fetching...
+[46, 23:07:04] Select *
+FROM high_smoke_quit_help
+Where (country_name, year) IN
+(SELECT country_name,year
+FROM low_death_rate_smoking)
+LIMIT 0, 1000
+: 508 row(s) returned
+[47, 23:08:10] Select * 
+From high_smoke_quit_help q
+Where EXISTS(
+Select country_name, year
+From death_rate_smoking d
+where q.country_name = d.country_name
+and q.year = d.year
+)
+LIMIT 0, 1000
+: Running...
+[47, 23:08:10] Select * 
+From high_smoke_quit_help q
+Where EXISTS(
+Select country_name, year
+From death_rate_smoking d
+where q.country_name = d.country_name
+and q.year = d.year
+)
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'd.country_name' in 'where clause'
+[48, 23:09:12] SELECT *
+FROM high_smoke_quit_help q
+WHERE EXISTS (
+  SELECT country_name, year
+  FROM death_rate_smoking d
+  WHERE q.country_name = d.country_name
+  AND q.year = d.year
+)
+LIMIT 0, 1000
+: Running...
+[48, 23:09:12] SELECT *
+FROM high_smoke_quit_help q
+WHERE EXISTS (
+  SELECT country_name, year
+  FROM death_rate_smoking d
+  WHERE q.country_name = d.country_name
+  AND q.year = d.year
+)
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'd.country_name' in 'where clause'
+[49, 23:10:09] SELECT *
+FROM high_smoke_quit_help q
+WHERE EXISTS (
+  SELECT country_name, year
+  FROM low_death_rate_smoking d
+  WHERE q.country_name = d.country_name
+  AND q.year = d.year
+)
+LIMIT 0, 1000
+: Running...
+[49, 23:10:10] SELECT *
+FROM high_smoke_quit_help q
+WHERE EXISTS (
+  SELECT country_name, year
+  FROM low_death_rate_smoking d
+  WHERE q.country_name = d.country_name
+  AND q.year = d.year
+)
+LIMIT 0, 1000
+: Fetching...
+[49, 23:10:11] SELECT *
+FROM high_smoke_quit_help q
+WHERE EXISTS (
+  SELECT country_name, year
+  FROM low_death_rate_smoking d
+  WHERE q.country_name = d.country_name
+  AND q.year = d.year
+)
+LIMIT 0, 1000
+: 508 row(s) returned
