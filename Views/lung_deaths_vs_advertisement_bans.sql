@@ -1,12 +1,11 @@
 SELECT country_name, year
-FROM high_lung_cancer_deaths
+FROM high_advertisementban
 EXCEPT
 SELECT country_name, year
-FROM high_advertisementban
+FROM high_lung_cancer_deaths;
 
-SELECT high_lung_cancer_deaths.country_name, high_lung_cancer_deaths.year
-FROM high_lung_cancer_deaths
-LEFT OUTER JOIN high_advertisementban
-ON high_lung_cancer_deaths.country_name = high_advertisementban.country_name
-AND high_lung_cancer_deaths.year = high_advertisementban.year
-WHERE high_advertisementban.country_name IS NULL
+SELECT a.country_name, a.year
+FROM high_advertisementban a
+LEFT OUTER JOIN high_lung_cancer_deaths l
+ON l.country_name = a.country_name AND l.year = a.year
+WHERE l.country_name IS NULL
