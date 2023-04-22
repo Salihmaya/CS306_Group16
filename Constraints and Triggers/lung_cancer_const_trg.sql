@@ -10,9 +10,7 @@ ADD CONSTRAINT female_death_rate_check CHECK (female_death_rate >= 0 AND female_
 INSERT INTO lung_cancer_deaths(iso_code, year, male_death_rate, female_death_rate)
 VALUES ('XXX', 2023, -5, 140);
 
-ALTER TABLE lung_cancer_deaths DROP CONSTRAINT male_death_rate_check;
-ALTER TABLE lung_cancer_deaths DROP CONSTRAINT female_death_rate_check;
--- Add the before insertion trigger
+-- the before insertion trigger
 
 DELIMITER //
 CREATE TRIGGER before_insert_male
@@ -42,7 +40,7 @@ END;
 //
 DELIMITER ;
 
--- Add the before update trigger
+-- the before update trigger
 
 DELIMITER //
 CREATE TRIGGER before_update_male
