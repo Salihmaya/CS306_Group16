@@ -1,0 +1,177 @@
+[1, 19:27:49] DROP VIEW high_bans_and_low_smoking_deaths: Running...
+[1, 19:27:49] DROP VIEW high_bans_and_low_smoking_deaths: 0 row(s) affected
+[2, 19:27:53] CREATE VIEW high_bans_and_low_smoking_deaths AS
+SELECT a.country_name, a.year
+FROM high_advertisementban a
+LEFT OUTER JOIN low_death_rate_smoking L
+ON a.country_name = L.country_name AND a.year = L.year
+WHERE L.country_name IS NULL: Running...
+[2, 19:27:53] CREATE VIEW high_bans_and_low_smoking_deaths AS
+SELECT a.country_name, a.year
+FROM high_advertisementban a
+LEFT OUTER JOIN low_death_rate_smoking L
+ON a.country_name = L.country_name AND a.year = L.year
+WHERE L.country_name IS NULL: 0 row(s) affected
+[3, 19:27:59] CREATE VIEW high_bans_and_low_smoking_deaths AS
+SELECT a.country_name, a.year
+FROM high_advertisementban a
+LEFT OUTER JOIN low_death_rate_smoking L
+ON a.country_name = L.country_name AND a.year = L.year
+WHERE L.country_name IS NULL: Running...
+[3, 19:27:59] CREATE VIEW high_bans_and_low_smoking_deaths AS
+SELECT a.country_name, a.year
+FROM high_advertisementban a
+LEFT OUTER JOIN low_death_rate_smoking L
+ON a.country_name = L.country_name AND a.year = L.year
+WHERE L.country_name IS NULL: Error Code: 1050. Table 'high_bans_and_low_smoking_deaths' already exists
+[4, 19:28:09] DROP VIEW high_bans_and_low_smoking_deaths: Running...
+[4, 19:28:09] DROP VIEW high_bans_and_low_smoking_deaths: 0 row(s) affected
+[5, 19:28:13] CREATE VIEW high_bans_and_low_smoking_deaths AS
+SELECT a.country_name, a.year
+FROM high_advertisementban a
+LEFT OUTER JOIN low_death_rate_smoking L
+ON a.country_name = L.country_name AND a.year = L.year
+WHERE L.country_name IS NULL: Running...
+[5, 19:28:13] CREATE VIEW high_bans_and_low_smoking_deaths AS
+SELECT a.country_name, a.year
+FROM high_advertisementban a
+LEFT OUTER JOIN low_death_rate_smoking L
+ON a.country_name = L.country_name AND a.year = L.year
+WHERE L.country_name IS NULL: 0 row(s) affected
+[6, 19:28:13] SELECT * FROM high_bans_and_low_smoking_deaths
+LIMIT 0, 1000
+: Running...
+[6, 19:28:13] SELECT * FROM high_bans_and_low_smoking_deaths
+LIMIT 0, 1000
+: Fetching...
+[6, 19:28:13] SELECT * FROM high_bans_and_low_smoking_deaths
+LIMIT 0, 1000
+: 337 row(s) returned
+[7, 19:28:18] SELECT a.country_name, a.year
+FROM high_advertisementban a
+EXCEPT
+SELECT L.country_name, L.year
+FROM low_death_rate_smoking L: Running...
+[7, 19:28:18] SELECT a.country_name, a.year
+FROM high_advertisementban a
+EXCEPT
+SELECT L.country_name, L.year
+FROM low_death_rate_smoking L: Fetching...
+[7, 19:28:18] SELECT a.country_name, a.year
+FROM high_advertisementban a
+EXCEPT
+SELECT L.country_name, L.year
+FROM low_death_rate_smoking L: 337 row(s) returned
+[8, 19:28:47] SELECT 	*
+FROM high_advertisementban 
+WHERE ban_indicator = 5
+AND country_name IN (SELECT distinct country_name
+					 FROM low_death_rate_smoking)
+LIMIT 0, 1000
+: Running...
+[8, 19:28:47] SELECT 	*
+FROM high_advertisementban 
+WHERE ban_indicator = 5
+AND country_name IN (SELECT distinct country_name
+					 FROM low_death_rate_smoking)
+LIMIT 0, 1000
+: Fetching...
+[8, 19:28:47] SELECT 	*
+FROM high_advertisementban 
+WHERE ban_indicator = 5
+AND country_name IN (SELECT distinct country_name
+					 FROM low_death_rate_smoking)
+LIMIT 0, 1000
+: 155 row(s) returned
+[9, 19:28:54] SELECT *
+FROM high_advertisementban hb
+WHERE EXISTS (
+    SELECT *
+    FROM low_death_rate_smoking ls
+    WHERE hb.country_name = ls.country_name 
+    AND hb.ban_indicator = 5
+)
+LIMIT 0, 1000
+: Running...
+[9, 19:28:54] SELECT *
+FROM high_advertisementban hb
+WHERE EXISTS (
+    SELECT *
+    FROM low_death_rate_smoking ls
+    WHERE hb.country_name = ls.country_name 
+    AND hb.ban_indicator = 5
+)
+LIMIT 0, 1000
+: Fetching...
+[9, 19:28:54] SELECT *
+FROM high_advertisementban hb
+WHERE EXISTS (
+    SELECT *
+    FROM low_death_rate_smoking ls
+    WHERE hb.country_name = ls.country_name 
+    AND hb.ban_indicator = 5
+)
+LIMIT 0, 1000
+: 155 row(s) returned
+[10, 19:29:21] ALTER TABLE cigarette_advertisements DROP CONSTRAINT ban_indicator_ch: Running...
+[10, 19:29:21] ALTER TABLE cigarette_advertisements DROP CONSTRAINT ban_indicator_ch: Error Code: 3940. Constraint 'ban_indicator_ch' does not exist.
+[11, 19:29:23] alter table cigarette_advertisements
+ADD constraint ban_indicator_check CHECK (ban_indicator > 0 and ban_indicator <= 5): Running...
+[11, 19:29:23] alter table cigarette_advertisements
+ADD constraint ban_indicator_check CHECK (ban_indicator > 0 and ban_indicator <= 5): Error Code: 3822. Duplicate check constraint name 'ban_indicator_check'.
+[12, 19:29:54] insert into cigarette_advertisements(iso_code, year, ban_indicator)
+values("AFG", 2123, 9): Running...
+[12, 19:29:54] insert into cigarette_advertisements(iso_code, year, ban_indicator)
+values("AFG", 2123, 9): 1 row(s) affected
+[13, 19:29:59] DROP TRIGGER before_insertion_trigger: Running...
+[13, 19:29:59] DROP TRIGGER before_insertion_trigger: 0 row(s) affected
+[14, 19:29:59] DROP TRIGGER before_update_trigger: Running...
+[14, 19:29:59] DROP TRIGGER before_update_trigger: 0 row(s) affected
+[15, 19:30:02] CREATE TRIGGER before_insertion_trigger BEFORE INSERT ON cigarette_advertisements
+FOR EACH ROW
+BEGIN
+	IF new.ban_indicator < 1 THEN SET new.ban_indicator = 1;
+    ELSEIF new.ban_indicator > 5 THEN SET new.ban_indicator = 5;    
+    END IF;
+END: Running...
+[15, 19:30:02] CREATE TRIGGER before_insertion_trigger BEFORE INSERT ON cigarette_advertisements
+FOR EACH ROW
+BEGIN
+	IF new.ban_indicator < 1 THEN SET new.ban_indicator = 1;
+    ELSEIF new.ban_indicator > 5 THEN SET new.ban_indicator = 5;    
+    END IF;
+END: 0 row(s) affected
+[16, 19:30:06] CREATE TRIGGER before_update_trigger BEFORE UPDATE ON cigarette_advertisements
+FOR EACH ROW
+BEGIN
+	IF new.ban_indicator < 1 THEN SET new.ban_indicator = 1;
+    ELSEIF new.ban_indicator > 5 THEN SET new.ban_indicator = 5;    
+    END IF;
+END: Running...
+[16, 19:30:06] CREATE TRIGGER before_update_trigger BEFORE UPDATE ON cigarette_advertisements
+FOR EACH ROW
+BEGIN
+	IF new.ban_indicator < 1 THEN SET new.ban_indicator = 1;
+    ELSEIF new.ban_indicator > 5 THEN SET new.ban_indicator = 5;    
+    END IF;
+END: 0 row(s) affected
+[17, 19:30:24] DROP PROCEDURE find_countries: Running...
+[17, 19:30:24] DROP PROCEDURE find_countries: 0 row(s) affected
+[18, 19:30:27] CREATE PROCEDURE find_countries(IN ban_indicator INT)
+BEGIN
+	SELECT *
+    FROM cigarette_advertisements c
+    WHERE c.ban_indicator = ban_indicator;
+END: Running...
+[18, 19:30:27] CREATE PROCEDURE find_countries(IN ban_indicator INT)
+BEGIN
+	SELECT *
+    FROM cigarette_advertisements c
+    WHERE c.ban_indicator = ban_indicator;
+END: 0 row(s) affected
+[19, 19:30:30] CALL find_countries(5): Running...
+[19, 19:30:30] CALL find_countries(5): Fetching...
+[19, 19:30:30] CALL find_countries(5): 186 row(s) returned
+[20, 19:30:35] CALL find_countries(1): Running...
+[20, 19:30:35] CALL find_countries(1): Fetching...
+[20, 19:30:35] CALL find_countries(1): 3 row(s) returned
