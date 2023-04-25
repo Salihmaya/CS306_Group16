@@ -10,3 +10,7 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+
+CALL find_countries(5);
+CALL find_countries(1);
