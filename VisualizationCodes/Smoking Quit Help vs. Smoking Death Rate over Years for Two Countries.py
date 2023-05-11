@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 
 
 config = {
-    'user': 'root',
-    'password': 'Elazigligakkos23',
-    'host': 'localhost',
-    'database': 'sies',
+    'user': '**',
+    'password': '**',
+    'host': '**',
+    'database': '**',
 }
 
 
